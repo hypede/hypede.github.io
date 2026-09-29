@@ -59,7 +59,7 @@
         <h3>Оболочка и лаунчер</h3>
         <span class="stack">GNOME Shell 48–50 · режим сеанса · расширение</span>
         <ul>
-          <li><strong>Полка</strong> — это верхняя панель самого GNOME, перенесённая вниз, поэтому все системные индикаторы работают как раньше.</li>
+          <li><strong>Полка</strong> держит родные индикаторы GNOME и стоит у любого края экрана, поэтому все системные индикаторы работают как раньше.</li>
           <li><strong>Закреплённые и запущенные приложения</strong> с точкой под значком: клик открывает, переключает, сворачивает или перебирает окна.</li>
           <li><strong>Лаунчер</strong> ищет приложения, настройки и недавние файлы, считает <code>12*(3+4)</code> и ищет в интернете.</li>
           <li><strong>Быстрые настройки и календарь</strong> открываются вверх, уведомления появляются справа внизу.</li>
@@ -114,6 +114,79 @@
     </div>
   </section>
 
+  <section id="yours" data-launcher="Под себя">
+    <div class="section-head">
+      <span class="eyebrow">Под себя</span>
+      <h2>Двигайте полку, меняйте лаунчер — настраивается почти всё.</h2>
+      <p>У каждой части среды есть настройка в «Настройках» HypeDE, а свои настройки HypeDE хранит
+        отдельно от обычного GNOME: эксперименты здесь никогда не меняют GNOME.</p>
+    </div>
+    <ul class="chips">
+      <li>Полка снизу, слева, справа или сверху</li>
+      <li>Во всю ширину или «островком»</li>
+      <li>Размер полки и значков, прозрачность, размытие</li>
+      <li>Лаунчер-«пузырь» или на весь экран</li>
+      <li>Колонки, размер значков, порядок, скрытые приложения</li>
+      <li>Что искать в лаунчере</li>
+      <li>Шрифты, значки, курсор, кнопки окон</li>
+      <li>Скорость анимаций и анимации окон</li>
+      <li>Скругление углов и прозрачность меню</li>
+      <li>Где показывать уведомления</li>
+      <li>Разрешение, частота, масштаб мониторов</li>
+      <li>Какие службы GNOME запускать</li>
+      <li>Резервная копия всех настроек</li>
+    </ul>
+    <div class="gallery" style="margin-top: 28px">
+      <figure class="screen">
+        <img src="../assets/img/shelf-left-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Тёмная тема: полка у левого края, рядом открыт лаунчер">
+        <figcaption>Полка у левого края, лаунчер рядом с ней.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="../assets/img/launcher-fullscreen-light.webp" width="1600" height="900" loading="lazy"
+             alt="Полноэкранный лаунчер: строка поиска по центру и широкая сетка приложений">
+        <figcaption>Лаунчер на весь экран.</figcaption>
+      </figure>
+      <figure class="screen">
+        <picture>
+          <source srcset="../assets/img/settings-shelf-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="../assets/img/settings-shelf-light.webp" width="1600" height="900" loading="lazy"
+               alt="«Настройки», раздел «Полка и лаунчер»: положение, вид, размер, прозрачность и размытие полки">
+        </picture>
+        <figcaption>«Настройки» → «Полка и лаунчер».</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="lock" data-launcher="Экран блокировки">
+    <div class="section-head">
+      <span class="eyebrow">Экран блокировки</span>
+      <h2>Цветные волны, большие часы и «выпрыгивающее» поле пароля.</h2>
+      <p>При блокировке экран заливают волны цвета акцента и открывают размытые обои и часы. Нажмите
+        клавишу — часы уйдут вверх, поле пароля выпрыгнет, а по бокам раскроются карточки с зарядом и
+        загрузкой системы. При разблокировке всё «сворачивается».</p>
+    </div>
+    <div class="wave-band" aria-hidden="true">
+      <svg class="waves" viewBox="0 0 2400 90" preserveAspectRatio="none">
+        <path d="M0 50 C 200 20, 400 80, 600 50 S 1000 20, 1200 50 S 1600 80, 1800 50 S 2200 20, 2400 50 V90 H0Z" fill="#a8c7fa" opacity="0.55"/>
+        <path d="M0 62 C 200 40, 400 88, 600 62 S 1000 40, 1200 62 S 1600 88, 1800 62 S 2200 40, 2400 62 V90 H0Z" fill="#0b57d0" opacity="0.6"/>
+        <path d="M0 74 C 200 60, 400 90, 600 74 S 1000 60, 1200 74 S 1600 90, 1800 74 S 2200 60, 2400 74 V90 H0Z" fill="#041e49" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="gallery" style="margin-top: 20px">
+      <figure class="screen">
+        <img src="../assets/img/lock-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Экран блокировки: большие часы и дата на размытых обоях">
+        <figcaption>Заблокировано: часы и дата.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="../assets/img/lock-prompt-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Экран блокировки с полем пароля и карточками даты и загрузки системы по бокам">
+        <figcaption>После нажатия клавиши: пароль, карточки заряда и системы.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="how" data-launcher="Как устроено">
     <div class="section-head">
       <span class="eyebrow">Как устроено</span>
@@ -130,6 +203,13 @@
         <h3>Модули KDE внутри</h3>
         <p>«Настройки» загружают модули через <code>KCModuleLoader</code> — ту же функцию, что и
           <code>kcmshell6</code>, поэтому внутрь страницы встают и QML-модули, и старые на виджетах.</p>
+      </article>
+      <article>
+        <h3>Свой конфиг</h3>
+        <p>Сеанс работает с отдельной базой настроек dconf — <code>~/.config/dconf/hypede</code>.
+          Раскладки и специальные возможности переносятся из GNOME при первом входе; расширения GNOME
+          сюда не попадают, пока вы их не разрешите, а необязательные службы GNOME запускаются только
+          по вашему выбору.</p>
       </article>
       <article>
         <h3>Честно о границах</h3>
@@ -179,6 +259,7 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Ско�
     <span>HypeDE — свободная программа под лицензией GPL-3.0-or-later.</span>
     <a href="https://github.com/hypede/hypede">GitHub</a>
     <a href="https://github.com/hypede/hypede/issues">Сообщить о проблеме</a>
+    <a class="support" href="https://ko-fi.com/pycodder">Поддержать на Ko-fi</a>
     <span>Проект не связан с Google. Все изображения — свои.</span>
   </footer>
 </main>
@@ -187,6 +268,8 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Ско�
   <button class="ring" type="button" aria-label="Лаунчер" aria-expanded="false" aria-controls="launcher"></button>
   <div class="shelf-apps">
     <a href="#parts" aria-label="Что внутри"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Внутри</span></a>
+    <a href="#yours" aria-label="Под себя"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg><span>Под себя</span></a>
+    <a href="#lock" aria-label="Экран блокировки"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v3h6V7a3 3 0 0 0-3-3z"/></svg><span>Блокировка</span></a>
     <a href="#how" aria-label="Как устроено"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 2h2v3.1a7 7 0 0 1 5.9 5.9H22v2h-3.1a7 7 0 0 1-5.9 5.9V22h-2v-3.1A7 7 0 0 1 5.1 13H2v-2h3.1A7 7 0 0 1 11 5.1zm1 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg><span>Устройство</span></a>
     <a href="#install" aria-label="Установка"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6zM4 19h16v2H4z"/></svg><span>Установка</span></a>
     <a href="https://github.com/hypede/hypede" aria-label="Исходники на GitHub"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8.6 7.4 4 12l4.6 4.6L7.2 18 1.2 12l6-6zm6.8 0L20 12l-4.6 4.6 1.4 1.4 6-6-6-6z"/></svg><span>Код</span></a>

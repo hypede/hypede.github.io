@@ -59,7 +59,7 @@
         <h3>Shell and launcher</h3>
         <span class="stack">GNOME Shell 48–50 · session mode · extension</span>
         <ul>
-          <li><strong>The shelf</strong> is GNOME's own top bar moved to the bottom, so every system indicator keeps working.</li>
+          <li><strong>The shelf</strong> holds GNOME's own indicators and sits at any screen edge, so every system indicator keeps working.</li>
           <li><strong>Pinned and running apps</strong> with a running dot; click to open, focus, minimise or cycle windows.</li>
           <li><strong>The launcher</strong> searches apps, settings and recent files, calculates <code>12*(3+4)</code> and searches the web.</li>
           <li><strong>Quick settings and the calendar</strong> open upwards; notifications land in the bottom-right corner.</li>
@@ -114,6 +114,79 @@
     </div>
   </section>
 
+  <section id="yours" data-launcher="Make it yours">
+    <div class="section-head">
+      <span class="eyebrow">Make it yours</span>
+      <h2>Move the shelf, restyle the launcher, change almost everything.</h2>
+      <p>Every part of the desktop has a setting in HypeDE Settings, and HypeDE keeps its settings
+        apart from your regular GNOME session, so experimenting there never changes GNOME.</p>
+    </div>
+    <ul class="chips">
+      <li>Shelf at the bottom, left, right or top</li>
+      <li>Full-width or floating shelf</li>
+      <li>Shelf size, icon size, opacity, blur</li>
+      <li>Bubble or full-screen launcher</li>
+      <li>Columns, icon size, order, hidden apps</li>
+      <li>What the launcher searches</li>
+      <li>Fonts, icons, cursor, window buttons</li>
+      <li>Animation speed and window animations</li>
+      <li>Corner rounding and menu opacity</li>
+      <li>Notification position</li>
+      <li>Resolution, refresh rate, display scale</li>
+      <li>Which GNOME services start</li>
+      <li>Backup and restore of the whole setup</li>
+    </ul>
+    <div class="gallery" style="margin-top: 28px">
+      <figure class="screen">
+        <img src="assets/img/shelf-left-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Dark theme: the shelf on the left edge with the launcher open next to it">
+        <figcaption>The shelf on the left edge, launcher next to it.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="assets/img/launcher-fullscreen-light.webp" width="1600" height="900" loading="lazy"
+             alt="The full-screen launcher: a centred search field and a wide grid of apps">
+        <figcaption>The full-screen launcher.</figcaption>
+      </figure>
+      <figure class="screen">
+        <picture>
+          <source srcset="assets/img/settings-shelf-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="assets/img/settings-shelf-light.webp" width="1600" height="900" loading="lazy"
+               alt="Settings, Shelf and launcher page: position, style, size, opacity and blur of the shelf">
+        </picture>
+        <figcaption>Settings → Shelf and launcher.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="lock" data-launcher="Lock screen">
+    <div class="section-head">
+      <span class="eyebrow">Lock screen</span>
+      <h2>Colour waves, a big clock and a password field that pops up.</h2>
+      <p>When you lock the screen, waves in your accent colour roll over it and reveal the blurred
+        wallpaper and the clock. Press a key: the clock moves up, the password field springs in and
+        cards with battery and system load unfold beside it. Unlocking folds everything away.</p>
+    </div>
+    <div class="wave-band" aria-hidden="true">
+      <svg class="waves" viewBox="0 0 2400 90" preserveAspectRatio="none">
+        <path d="M0 50 C 200 20, 400 80, 600 50 S 1000 20, 1200 50 S 1600 80, 1800 50 S 2200 20, 2400 50 V90 H0Z" fill="#a8c7fa" opacity="0.55"/>
+        <path d="M0 62 C 200 40, 400 88, 600 62 S 1000 40, 1200 62 S 1600 88, 1800 62 S 2200 40, 2400 62 V90 H0Z" fill="#0b57d0" opacity="0.6"/>
+        <path d="M0 74 C 200 60, 400 90, 600 74 S 1000 60, 1200 74 S 1600 90, 1800 74 S 2200 60, 2400 74 V90 H0Z" fill="#041e49" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="gallery" style="margin-top: 20px">
+      <figure class="screen">
+        <img src="assets/img/lock-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Lock screen: a large clock and the date over the blurred wallpaper">
+        <figcaption>Locked: clock and date.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="assets/img/lock-prompt-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Lock screen with the password field, and cards for the date and system load on both sides">
+        <figcaption>After a key press: password, battery and system cards.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="how" data-launcher="How it works">
     <div class="section-head">
       <span class="eyebrow">How it works</span>
@@ -130,6 +203,12 @@
         <h3>KDE modules, embedded</h3>
         <p>Settings loads modules with <code>KCModuleLoader</code>, the same function
           <code>kcmshell6</code> uses, so both QML and widget-based modules fit inside the page.</p>
+      </article>
+      <article>
+        <h3>Its own configuration</h3>
+        <p>The session runs with a separate dconf database, <code>~/.config/dconf/hypede</code>.
+          Layouts and accessibility come over from GNOME on first login; GNOME extensions stay out
+          unless you allow them, and optional GNOME services start only if you switch them on.</p>
       </article>
       <article>
         <h3>Honest limits</h3>
@@ -179,6 +258,7 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Copied"
     <span>HypeDE is free software under the GPL-3.0-or-later.</span>
     <a href="https://github.com/hypede/hypede">GitHub</a>
     <a href="https://github.com/hypede/hypede/issues">Report a problem</a>
+    <a class="support" href="https://ko-fi.com/pycodder">Support me on Ko-fi</a>
     <span>Not affiliated with Google. All artwork is original.</span>
   </footer>
 </main>
@@ -187,6 +267,8 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Copied"
   <button class="ring" type="button" aria-label="Launcher" aria-expanded="false" aria-controls="launcher"></button>
   <div class="shelf-apps">
     <a href="#parts" aria-label="What's inside"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Inside</span></a>
+    <a href="#yours" aria-label="Make it yours"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg><span>Yours</span></a>
+    <a href="#lock" aria-label="Lock screen"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v3h6V7a3 3 0 0 0-3-3z"/></svg><span>Lock</span></a>
     <a href="#how" aria-label="How it works"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 2h2v3.1a7 7 0 0 1 5.9 5.9H22v2h-3.1a7 7 0 0 1-5.9 5.9V22h-2v-3.1A7 7 0 0 1 5.1 13H2v-2h3.1A7 7 0 0 1 11 5.1zm1 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg><span>How</span></a>
     <a href="#install" aria-label="Install"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6zM4 19h16v2H4z"/></svg><span>Install</span></a>
     <a href="https://github.com/hypede/hypede" aria-label="Source on GitHub"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8.6 7.4 4 12l4.6 4.6L7.2 18 1.2 12l6-6zm6.8 0L20 12l-4.6 4.6 1.4 1.4 6-6-6-6z"/></svg><span>Source</span></a>

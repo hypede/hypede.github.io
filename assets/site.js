@@ -95,6 +95,28 @@ for (const button of document.querySelectorAll('[data-copy]')) {
     });
 }
 
+// ---- scroll reveal ----
+// Only for what is below the fold at load: the first screen is already
+// animated by CSS and must never start out invisible.
+const motionOk = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (motionOk && 'IntersectionObserver' in window) {
+    const candidates = document.querySelectorAll(
+        '.section-head, .part, .how article, .step, .gallery figure, .wave-band, pre.tree');
+    const revealer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add('in');
+            revealer.unobserve(entry.target);
+        }
+    }, {rootMargin: '0px 0px -8% 0px', threshold: 0.08});
+    for (const el of candidates) {
+        if (el.getBoundingClientRect().top < innerHeight) continue;
+        el.classList.add('reveal');
+        revealer.observe(el);
+    }
+    document.documentElement.classList.add('motion');
+}
+
 // ---- current section on the shelf ----
 const links = new Map([...document.querySelectorAll('.shelf-apps a[href^="#"]')]
     .map(a => [a.getAttribute('href').slice(1), a]));

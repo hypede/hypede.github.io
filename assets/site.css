@@ -227,4 +227,90 @@ footer { color: var(--muted); font-size: 0.92rem; display: flex; gap: 12px 24px;
   .tray .date { display: none; }
   .install { border-radius: 20px; padding: 14px 16px; }
 }
+/* ---------- motion ----------
+   Everything below is decoration: the page is complete without it, and
+   prefers-reduced-motion switches it off. Scroll reveals only apply once
+   site.js has marked the page with .motion, and never to what is already
+   on screen at load. */
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes drift {
+  from { background-position: 0% 100%; }
+  to { background-position: 100% 100%; }
+}
+@keyframes tilt-in {
+  from { opacity: 0; transform: perspective(1400px) rotateX(14deg) translateY(40px) scale(0.96); }
+  to { opacity: 1; transform: perspective(1400px) rotateX(0) translateY(0) scale(1); }
+}
+@keyframes shelf-in {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes ring-hint {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  50% { box-shadow: 0 0 0 10px transparent; }
+}
+@keyframes wave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* the wallpaper drifts sideways inside its box, so nothing leaves the viewport */
+  .hero::before { background-size: calc(100% + 160px) auto; animation: drift 18s ease-in-out infinite alternate; }
+  .hero > * { animation: rise-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .hero > :nth-child(2) { animation-delay: 80ms; }
+  .hero > :nth-child(3) { animation-delay: 160ms; }
+  .hero > :nth-child(4) { animation-delay: 240ms; }
+  .hero > :nth-child(5) { animation-delay: 320ms; }
+  /* backwards, not both: once finished, the hover lift must win */
+  .hero > .screen { animation: tilt-in 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) 380ms backwards; }
+
+  .shelf { animation: shelf-in 600ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms both; }
+  .ring { animation: ring-hint 1.6s ease-out 1.2s 2; }
+  .bubble:not([hidden]) { animation: bubble-in 260ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both; transform-origin: 0 100%; }
+
+  .screen, .how article, .gallery figure {
+    transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 320ms;
+  }
+  .screen:hover, .how article:hover, .gallery figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 4px rgba(22, 32, 46, 0.08), 0 18px 40px rgba(22, 32, 46, 0.16);
+  }
+  .shelf-apps a, .ring, button, .button { transition: background-color 160ms, transform 160ms; }
+  .shelf-apps a:active, .ring:active, button:active, .button:active { transform: scale(0.95); }
+
+  /* Scroll reveal: .reveal elements rise into place as they come into view. */
+  .motion .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms, transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .motion .reveal.in { opacity: 1; transform: none; }
+  .motion .reveal.in:nth-child(2) { transition-delay: 90ms; }
+  .motion .reveal.in:nth-child(3) { transition-delay: 180ms; }
+  .motion .reveal.in:nth-child(4) { transition-delay: 270ms; }
+
+  /* Lock screen preview: the colour waves roll across its top edge. */
+  .waves { animation: wave 9s linear infinite; }
+}
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---------- lock screen and customisation sections ---------- */
+.wave-band {
+  position: relative; height: 90px; overflow: hidden; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--line);
+}
+.waves { position: absolute; inset: 0 auto 0 0; width: 200%; height: 100%; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.gallery figure { border-radius: 14px; }
+.gallery figcaption { padding-inline: 4px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chips li {
+  padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--on-accent-soft);
+  font-weight: 500; font-size: 0.92rem;
+}
+.support { color: #ff5e5b; font-weight: 600; }
