@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HypeDE</title>
+<meta name="description" content="HypeDE превращает обычный GNOME в рабочий стол в стиле Chrome OS: полка внизу, лаунчер, «Настройки» на модулях KDE и файловый менеджер — смесь GNOME Files и COSMIC Files.">
+<meta property="og:title" content="HypeDE">
+<meta property="og:description" content="GNOME в облике Chrome OS.">
+<meta property="og:image" content="https://hypede.github.io/assets/img/launcher-light.webp">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://hypede.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="module" src="../assets/site.js"></script>
+</head>
+<body>
+<main class="page">
+
+  <header class="hero" id="top" data-launcher="В начало">
+    <div class="brand">
+      <img src="../assets/img/logo.svg" alt="" width="36" height="36">
+      HypeDE
+      <a class="lang" href="../" hreflang="en" lang="en">English</a>
+    </div>
+    <h1>GNOME в облике Chrome&nbsp;OS.</h1>
+    <p class="lede">
+      Полка внизу, лаунчер-«пузырь» и трей со статусом — на
+      <strong>нетронутом GNOME Shell</strong>. «Настройки» из настоящих
+      <strong>модулей KDE</strong>. Файловый менеджер — смесь
+      <strong>GNOME Files и COSMIC Files</strong>.
+    </p>
+    <div class="install">
+      <code><span class="prompt">$ </span><span id="cmd-hero">git clone https://github.com/hypede/hypede &amp;&amp; cd hypede/packaging &amp;&amp; makepkg -si</span></code>
+      <button type="button" data-copy="cmd-hero" data-done="Скопировано" data-select="Выделено — нажмите Ctrl+C">Копировать</button>
+    </div>
+    <div class="actions">
+      <a class="button" href="https://github.com/hypede/hypede">Исходники на GitHub</a>
+      <a class="button quiet" href="#install">Как установить</a>
+    </div>
+    <figure class="screen">
+      <img src="../assets/img/launcher-light.webp" width="1600" height="900"
+           alt="Рабочий стол HypeDE с открытым лаунчером: поиск, недавние файлы и сетка приложений">
+    </figure>
+  </header>
+
+  <section id="parts" data-launcher="Что внутри">
+    <div class="section-head">
+      <span class="eyebrow">Что внутри</span>
+      <h2>Три части, и каждая стоит на том, что уже работает.</h2>
+      <p>HypeDE — отдельный сеанс рядом с обычным GNOME. На экране входа появляется пункт
+        «HypeDE», а в самом GNOME ничего не патчится и не заменяется.</p>
+    </div>
+
+    <div class="part" id="shell" data-launcher="Оболочка и лаунчер">
+      <div class="part-text">
+        <h3>Оболочка и лаунчер</h3>
+        <span class="stack">GNOME Shell 48–50 · режим сеанса · расширение</span>
+        <ul>
+          <li><strong>Полка</strong> — это верхняя панель самого GNOME, перенесённая вниз, поэтому все системные индикаторы работают как раньше.</li>
+          <li><strong>Закреплённые и запущенные приложения</strong> с точкой под значком: клик открывает, переключает, сворачивает или перебирает окна.</li>
+          <li><strong>Лаунчер</strong> ищет приложения, настройки и недавние файлы, считает <code>12*(3+4)</code> и ищет в интернете.</li>
+          <li><strong>Быстрые настройки и календарь</strong> открываются вверх, уведомления появляются справа внизу.</li>
+        </ul>
+      </div>
+      <figure class="screen">
+        <picture>
+          <img src="../assets/img/quick-settings-dark.webp" width="1600" height="900" loading="lazy"
+               alt="Тёмная тема: быстрые настройки над треем на полке">
+        </picture>
+      </figure>
+    </div>
+
+    <div class="part" id="settings" data-launcher="Настройки">
+      <div class="part-text">
+        <h3>«Настройки» с KDE внутри</h3>
+        <span class="stack">Qt 6 · QML · KCMUtils · GSettings</span>
+        <ul>
+          <li><strong>Раскладка Chrome OS</strong>: поиск в заголовке, меню слева, карточки справа.</li>
+          <li><strong>Настоящие модули KDE</strong> для сети, Bluetooth, звука, принтеров, пользователей, приложений по умолчанию и Flatpak — прямо в странице.</li>
+          <li><strong>Страницы на стороне GNOME</strong> для мыши, клавиатуры, ночного режима, питания, обоев, темы и полки.</li>
+          <li><strong>Одна тема</strong>: модули KDE следуют светлой или тёмной теме GNOME.</li>
+        </ul>
+      </div>
+      <figure class="screen">
+        <picture>
+          <source srcset="../assets/img/settings-kcm-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="../assets/img/settings-kcm-light.webp" width="1600" height="900" loading="lazy"
+               alt="«Настройки» HypeDE с модулем KDE «Приложения по умолчанию» внутри окна в стиле Chrome OS">
+        </picture>
+      </figure>
+    </div>
+
+    <div class="part" id="files" data-launcher="Файлы">
+      <div class="part-text">
+        <h3>«Файлы»</h3>
+        <span class="stack">Python · GTK 4 · libadwaita</span>
+        <ul>
+          <li><strong>От GNOME Files</strong>: боковая панель, строка пути, поиск и плашка выделения.</li>
+          <li><strong>От COSMIC Files</strong>: вкладки и панель сведений с превью.</li>
+          <li><strong>Сетка с эскизами или список</strong>, выделение рамкой, перетаскивание.</li>
+          <li><strong>Копирование и перемещение в фоне</strong> с прогрессом, отменой и восстановлением из корзины.</li>
+        </ul>
+      </div>
+      <figure class="screen">
+        <picture>
+          <source srcset="../assets/img/files-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="../assets/img/files-light.webp" width="1600" height="900" loading="lazy"
+               alt="«Файлы» HypeDE: папка «Изображения» с эскизами и панелью сведений">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <section id="how" data-launcher="Как устроено">
+    <div class="section-head">
+      <span class="eyebrow">Как устроено</span>
+      <h2>Рядом с GNOME, а не вместо него.</h2>
+    </div>
+    <div class="how">
+      <article>
+        <h3>Свой сеанс</h3>
+        <p>Режим сеанса GNOME Shell и юниты gnome-session запускают оболочку как
+          <code>gnome-shell --mode=hypede</code>. Значения по умолчанию лежат в секциях
+          <code>:HypeDE</code> и не трогают обычный сеанс GNOME.</p>
+      </article>
+      <article>
+        <h3>Модули KDE внутри</h3>
+        <p>«Настройки» загружают модули через <code>KCModuleLoader</code> — ту же функцию, что и
+          <code>kcmshell6</code>, поэтому внутрь страницы встают и QML-модули, и старые на виджетах.</p>
+      </article>
+      <article>
+        <h3>Честно о границах</h3>
+        <p>Модули KDE для KWin и PowerDevil под GNOME ничего бы не меняли, поэтому эти разделы
+          работают через GSettings. Расположение мониторов пока открывается в настройках GNOME.</p>
+      </article>
+    </div>
+    <pre class="tree"><code>shell/modes/hypede.json      верхняя панель → полка, расширения
+shell/extension/…            полка, лаунчер, обзор, уведомления
+session/                     сеанс для экрана входа, юниты gnome-session
+apps/settings/               «Настройки»: C++/QML, KCMUtils, GSettings, D-Bus
+apps/files/                  «Файлы»: Python, GTK 4, libadwaita</code></pre>
+  </section>
+
+  <section id="install" data-launcher="Установка">
+    <div class="section-head">
+      <span class="eyebrow">Установка</span>
+      <h2>Arch Linux и CachyOS</h2>
+      <p>Нужен GNOME Shell 48–50. Число заданий сборки подбирается по свободной памяти; задать
+        вручную: <code>JOBS=2 makepkg -si</code>.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div>
+        <h3>Соберите и установите пакет</h3>
+        <pre class="code"><code id="cmd-build">git clone https://github.com/hypede/hypede
+cd hypede/packaging
+makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Скопировано" data-select="Выделено">Копировать</button></pre>
+      </div></div>
+      <div class="step"><div>
+        <h3>Добавьте нужные модули KDE</h3>
+        <p>Все по желанию. Без модуля его строка в «Настройках» подскажет нужный пакет.</p>
+        <pre class="code"><code id="cmd-kcm">sudo pacman -S plasma-nm bluedevil plasma-pa print-manager plasma-workspace \
+               plasma-desktop kde-cli-tools flatpak-kcm kinfocenter power-profiles-daemon</code><button type="button" data-copy="cmd-kcm" data-done="Скопировано" data-select="Выделено">Копировать</button></pre>
+      </div></div>
+      <div class="step"><div>
+        <h3>Выйдите и выберите «HypeDE»</h3>
+        <p>Сеанс появится в GDM, SDDM и других экранах входа, которые читают
+          <code>/usr/share/wayland-sessions</code>.</p>
+      </div></div>
+    </div>
+    <p style="margin-top: 28px">Другие дистрибутивы: <code>make &amp;&amp; sudo make install</code>, зависимости — в
+      <a href="https://github.com/hypede/hypede/blob/main/README.ru.md">README</a>.
+      Нужна только полка в обычном GNOME? <code>make install-user</code>.</p>
+  </section>
+
+  <footer>
+    <span>HypeDE — свободная программа под лицензией GPL-3.0-or-later.</span>
+    <a href="https://github.com/hypede/hypede">GitHub</a>
+    <a href="https://github.com/hypede/hypede/issues">Сообщить о проблеме</a>
+    <span>Проект не связан с Google. Все изображения — свои.</span>
+  </footer>
+</main>
+
+<nav class="shelf" aria-label="Сайт">
+  <button class="ring" type="button" aria-label="Лаунчер" aria-expanded="false" aria-controls="launcher"></button>
+  <div class="shelf-apps">
+    <a href="#parts" aria-label="Что внутри"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Внутри</span></a>
+    <a href="#how" aria-label="Как устроено"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 2h2v3.1a7 7 0 0 1 5.9 5.9H22v2h-3.1a7 7 0 0 1-5.9 5.9V22h-2v-3.1A7 7 0 0 1 5.1 13H2v-2h3.1A7 7 0 0 1 11 5.1zm1 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg><span>Устройство</span></a>
+    <a href="#install" aria-label="Установка"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6zM4 19h16v2H4z"/></svg><span>Установка</span></a>
+    <a href="https://github.com/hypede/hypede" aria-label="Исходники на GitHub"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8.6 7.4 4 12l4.6 4.6L7.2 18 1.2 12l6-6zm6.8 0L20 12l-4.6 4.6 1.4 1.4 6-6-6-6z"/></svg><span>Код</span></a>
+  </div>
+  <div class="tray" aria-label="Ваше местное время">
+    <span class="date"></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c3.9 0 7.4 1.5 10 4l-10 11L2 9c2.6-2.5 6.1-4 10-4z"/></svg>
+    <span class="time"></span>
+  </div>
+</nav>
+
+<div class="bubble" id="launcher" hidden>
+  <label for="launcher-search">Поиск по странице или пример</label>
+  <input id="launcher-search" type="search" placeholder="Установка, Настройки, 12*(3+4)…" autocomplete="off">
+  <div class="calc" hidden></div>
+  <ul></ul>
+</div>
+</body>
+</html>
