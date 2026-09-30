@@ -4,287 +4,182 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>HypeDE</title>
-<meta name="description" content="HypeDE turns a stock GNOME into a Chrome OS–style desktop: bottom shelf, bubble launcher, Settings built from KDE modules and a file manager mixing GNOME Files and COSMIC Files.">
+<meta name="description" content="HypeDE is a Chrome OS–style desktop built on GNOME Shell: shelf, launcher, quick settings, its own Settings and Files, and an AI assistant.">
 <meta property="og:title" content="HypeDE">
-<meta property="og:description" content="GNOME, reshaped into a Chrome OS–style desktop.">
+<meta property="og:description" content="A Chrome OS–style desktop built on GNOME Shell.">
 <meta property="og:image" content="https://hypede.github.io/assets/img/launcher-light.webp">
 <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="ru" href="https://hypede.github.io/ru/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 <script type="module" src="assets/site.js"></script>
 </head>
 <body>
-<main class="page">
 
-  <header class="hero" id="top" data-launcher="Top of the page">
-    <div class="brand">
-      <img src="assets/img/logo.svg" alt="" width="36" height="36">
-      HypeDE
-      <a class="lang" href="ru/" hreflang="ru" lang="ru">Русский</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/img/logo.svg" alt="" width="28" height="28">HypeDE</a>
+    <nav>
+      <a href="#shelf">Shelf</a>
+      <a href="#settings">Settings</a>
+      <a href="#assistant">AI assistant</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/hypede/hypede">GitHub</a>
+      <a href="ru/" hreflang="ru" lang="ru">Русский</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="intro wrap">
+    <h1>A Chrome&nbsp;OS–style desktop for&nbsp;Linux</h1>
+    <p>HypeDE installs next to GNOME as a separate session. You get the shelf,
+      launcher, quick settings and lock screen of Chrome OS, with a regular
+      GNOME Shell and all its apps underneath.</p>
+    <div class="buttons">
+      <a class="button" href="#install">Install</a>
+      <a class="button tonal" href="https://github.com/hypede/hypede">Source code</a>
     </div>
-    <h1>GNOME, reshaped into a Chrome&nbsp;OS–style desktop.</h1>
-    <p class="lede">
-      A shelf at the bottom, a bubble launcher and a status tray, running on an
-      <strong>unmodified GNOME Shell</strong>. Settings built from real
-      <strong>KDE modules</strong>. A file manager that mixes
-      <strong>GNOME Files and COSMIC Files</strong>.
-    </p>
-    <div class="install">
-      <code><span class="prompt">$ </span><span id="cmd-hero">git clone https://github.com/hypede/hypede &amp;&amp; cd hypede/packaging &amp;&amp; makepkg -si</span></code>
-      <button type="button" data-copy="cmd-hero" data-done="Copied" data-select="Selected — press Ctrl+C">Copy</button>
-    </div>
-    <div class="actions">
-      <a class="button" href="https://github.com/hypede/hypede">Source on GitHub</a>
-      <a class="button quiet" href="#install">Other ways to install</a>
-    </div>
-    <figure class="screen">
-      <img src="assets/img/launcher-light.webp" width="1600" height="900"
-           alt="HypeDE desktop with the launcher open above the shelf: search field, recent files and a grid of apps">
+    <figure class="shot">
+      <picture>
+        <source srcset="assets/img/launcher-dark.webp" media="(prefers-color-scheme: dark)">
+        <img src="assets/img/launcher-light.webp" width="1600" height="900"
+             alt="HypeDE desktop with the launcher open: search, recent files and apps, the shelf at the bottom">
+      </picture>
     </figure>
-  </header>
+  </section>
 
-  <section id="parts" data-launcher="What's inside">
-    <div class="section-head">
-      <span class="eyebrow">What's inside</span>
-      <h2>Three parts, each built on something that already works.</h2>
-      <p>HypeDE is a separate session next to your regular GNOME. Your login screen gets a new
-        “HypeDE” entry; nothing in GNOME is patched or replaced.</p>
-    </div>
-
-    <div class="part" id="shell" data-launcher="Shell and launcher">
-      <div class="part-text">
-        <h3>Shell and launcher</h3>
-        <span class="stack">GNOME Shell 48–50 · session mode · extension</span>
-        <ul>
-          <li><strong>The shelf</strong> holds GNOME's own indicators and sits at any screen edge, so every system indicator keeps working.</li>
-          <li><strong>Pinned and running apps</strong> with a running dot; click to open, focus, minimise or cycle windows.</li>
-          <li><strong>The launcher</strong> searches apps, settings and recent files, calculates <code>12*(3+4)</code> and searches the web.</li>
-          <li><strong>Quick settings and the calendar</strong> open upwards; notifications land in the bottom-right corner.</li>
-        </ul>
+  <div class="wrap">
+    <section class="feature" id="shelf">
+      <div class="text">
+        <h2>Shelf and launcher</h2>
+        <p>Put the shelf at the bottom, side or top, stretch it across the
+          screen or let it float. Drag icons to reorder them; windows minimize
+          into their own icon.</p>
+        <p>The launcher finds apps, settings and files in your home folder,
+          does arithmetic and sends anything else to your search engine. It
+          comes compact or full screen.</p>
       </div>
-      <figure class="screen">
+      <figure class="shot">
+        <img src="assets/img/shelf-left-dark.webp" width="1600" height="900" loading="lazy"
+             alt="Shelf on the left edge with the launcher open, dark theme">
+      </figure>
+    </section>
+
+    <section class="feature" id="quick">
+      <div class="text">
+        <h2>Quick settings</h2>
+        <p>Network, Bluetooth, sound, brightness, Night Light and Do Not
+          Disturb as round buttons in three columns, like Chrome OS. They are
+          GNOME's own toggles, so toggles added by apps work too.</p>
+      </div>
+      <figure class="shot small">
+        <img src="assets/img/quick-settings-crop.webp" width="700" height="340" loading="lazy"
+             alt="Quick settings: round buttons with labels above the status area">
+      </figure>
+    </section>
+
+    <section class="feature" id="settings">
+      <div class="text">
+        <h2>Settings</h2>
+        <p>One window for everything. Network, Bluetooth, sound, printers and
+          users are KDE modules shown inside the page. Displays, mouse,
+          keyboard, appearance, shelf and lock screen are HypeDE's own pages.</p>
+        <p>HypeDE keeps its settings apart from regular GNOME and can back
+          them up to a file.</p>
+      </div>
+      <figure class="shot">
         <picture>
-          <img src="assets/img/quick-settings-dark.webp" width="1600" height="900" loading="lazy"
-               alt="Dark theme: quick settings open above the status tray on the shelf">
+          <source srcset="assets/img/settings-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="assets/img/settings-light.webp" width="1600" height="900" loading="lazy"
+               alt="HypeDE Settings, Personalization page with wallpapers">
         </picture>
       </figure>
-    </div>
+    </section>
 
-    <div class="part" id="settings" data-launcher="Settings">
-      <div class="part-text">
-        <h3>Settings with KDE inside</h3>
-        <span class="stack">Qt 6 · QML · KCMUtils · GSettings</span>
-        <ul>
-          <li><strong>Chrome OS layout</strong>: search in the title bar, menu on the left, cards on the right.</li>
-          <li><strong>Real KDE modules</strong> for network, Bluetooth, sound, printers, users, default apps and Flatpak, embedded in the page.</li>
-          <li><strong>GNOME-side pages</strong> for mouse, keyboard, night light, power, wallpaper, theme and the shelf.</li>
-          <li><strong>One theme</strong>: the KDE modules follow GNOME's light or dark style.</li>
-        </ul>
+    <section class="feature" id="assistant">
+      <div class="text">
+        <h2>AI assistant</h2>
+        <p>Pick Claude, Gemini, Mistral, ChatGPT, Grok or DeepSeek and sign in
+          with your own account. The assistant opens as a panel on the right.
+          “Ask” buttons live in the launcher, Files and Settings; from Files
+          you can send the selected files.</p>
+        <p>It only chats: it cannot run commands and sees only what you send
+          it. It is off until you turn it on.</p>
       </div>
-      <figure class="screen">
+      <figure class="shot">
         <picture>
-          <source srcset="assets/img/settings-kcm-dark.webp" media="(prefers-color-scheme: dark)">
-          <img src="assets/img/settings-kcm-light.webp" width="1600" height="900" loading="lazy"
-               alt="HypeDE Settings showing KDE's Default Applications module inside a Chrome OS–style window">
+          <source srcset="assets/img/settings-assistant-dark.webp" media="(prefers-color-scheme: dark)">
+          <img src="assets/img/settings-assistant-light.webp" width="1600" height="900" loading="lazy"
+               alt="AI assistant settings: six providers and a sign-in button">
         </picture>
       </figure>
-    </div>
+    </section>
 
-    <div class="part" id="files" data-launcher="Files">
-      <div class="part-text">
-        <h3>Files</h3>
-        <span class="stack">Python · GTK 4 · libadwaita</span>
-        <ul>
-          <li><strong>From GNOME Files</strong>: sidebar, path bar, search and the selection bar.</li>
-          <li><strong>From COSMIC Files</strong>: tabs and a details pane with previews.</li>
-          <li><strong>Grid with thumbnails or list</strong>, rubber-band selection, drag and drop.</li>
-          <li><strong>Background copy and move</strong> with progress, undo and trash restore.</li>
-        </ul>
+    <section class="feature" id="files">
+      <div class="text">
+        <h2>Files</h2>
+        <p>Sidebar and path bar like GNOME Files, tabs and a details pane like
+          COSMIC Files. Thumbnails, drag and drop, background copying with
+          undo, and a trash you can restore from.</p>
       </div>
-      <figure class="screen">
+      <figure class="shot">
         <picture>
           <source srcset="assets/img/files-dark.webp" media="(prefers-color-scheme: dark)">
           <img src="assets/img/files-light.webp" width="1600" height="900" loading="lazy"
-               alt="HypeDE Files showing a Pictures folder with thumbnails and the details pane">
+               alt="HypeDE Files: a folder of image thumbnails and the details pane">
         </picture>
       </figure>
-    </div>
-  </section>
+    </section>
 
-  <section id="yours" data-launcher="Make it yours">
-    <div class="section-head">
-      <span class="eyebrow">Make it yours</span>
-      <h2>Move the shelf, restyle the launcher, change almost everything.</h2>
-      <p>Every part of the desktop has a setting in HypeDE Settings, and HypeDE keeps its settings
-        apart from your regular GNOME session, so experimenting there never changes GNOME.</p>
-    </div>
-    <ul class="chips">
-      <li>Shelf at the bottom, left, right or top</li>
-      <li>Full-width or floating shelf</li>
-      <li>Shelf size, icon size, opacity, blur</li>
-      <li>Bubble or full-screen launcher</li>
-      <li>Columns, icon size, order, hidden apps</li>
-      <li>What the launcher searches</li>
-      <li>Fonts, icons, cursor, window buttons</li>
-      <li>Animation speed and window animations</li>
-      <li>Corner rounding and menu opacity</li>
-      <li>Notification position</li>
-      <li>Resolution, refresh rate, display scale</li>
-      <li>Which GNOME services start</li>
-      <li>Backup and restore of the whole setup</li>
-    </ul>
-    <div class="gallery" style="margin-top: 28px">
-      <figure class="screen">
-        <img src="assets/img/shelf-left-dark.webp" width="1600" height="900" loading="lazy"
-             alt="Dark theme: the shelf on the left edge with the launcher open next to it">
-        <figcaption>The shelf on the left edge, launcher next to it.</figcaption>
-      </figure>
-      <figure class="screen">
-        <img src="assets/img/launcher-fullscreen-light.webp" width="1600" height="900" loading="lazy"
-             alt="The full-screen launcher: a centred search field and a wide grid of apps">
-        <figcaption>The full-screen launcher.</figcaption>
-      </figure>
-      <figure class="screen">
-        <picture>
-          <source srcset="assets/img/settings-shelf-dark.webp" media="(prefers-color-scheme: dark)">
-          <img src="assets/img/settings-shelf-light.webp" width="1600" height="900" loading="lazy"
-               alt="Settings, Shelf and launcher page: position, style, size, opacity and blur of the shelf">
-        </picture>
-        <figcaption>Settings → Shelf and launcher.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="lock" data-launcher="Lock screen">
-    <div class="section-head">
-      <span class="eyebrow">Lock screen</span>
-      <h2>Colour waves, a big clock and a password field that pops up.</h2>
-      <p>When you lock the screen, waves in your accent colour roll over it and reveal the blurred
-        wallpaper and the clock. Press a key: the clock moves up, the password field springs in and
-        cards with battery and system load unfold beside it. Unlocking folds everything away.</p>
-    </div>
-    <div class="wave-band" aria-hidden="true">
-      <svg class="waves" viewBox="0 0 2400 90" preserveAspectRatio="none">
-        <path d="M0 50 C 200 20, 400 80, 600 50 S 1000 20, 1200 50 S 1600 80, 1800 50 S 2200 20, 2400 50 V90 H0Z" fill="#a8c7fa" opacity="0.55"/>
-        <path d="M0 62 C 200 40, 400 88, 600 62 S 1000 40, 1200 62 S 1600 88, 1800 62 S 2200 40, 2400 62 V90 H0Z" fill="#0b57d0" opacity="0.6"/>
-        <path d="M0 74 C 200 60, 400 90, 600 74 S 1000 60, 1200 74 S 1600 90, 1800 74 S 2200 60, 2400 74 V90 H0Z" fill="#041e49" opacity="0.7"/>
-      </svg>
-    </div>
-    <div class="gallery" style="margin-top: 20px">
-      <figure class="screen">
-        <img src="assets/img/lock-dark.webp" width="1600" height="900" loading="lazy"
-             alt="Lock screen: a large clock and the date over the blurred wallpaper">
-        <figcaption>Locked: clock and date.</figcaption>
-      </figure>
-      <figure class="screen">
+    <section class="feature" id="lock">
+      <div class="text">
+        <h2>Lock screen</h2>
+        <p>A large clock, battery and load cards, and accent-coloured waves
+          when you lock. Works with any login screen — GDM, SDDM, greetd or
+          LightDM — with the password checked through PAM.</p>
+      </div>
+      <figure class="shot">
         <img src="assets/img/lock-prompt-dark.webp" width="1600" height="900" loading="lazy"
-             alt="Lock screen with the password field, and cards for the date and system load on both sides">
-        <figcaption>After a key press: password, battery and system cards.</figcaption>
+             alt="Lock screen: clock, password field and cards on both sides">
       </figure>
-    </div>
-  </section>
+    </section>
 
-  <section id="how" data-launcher="How it works">
-    <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Next to GNOME, not instead of it.</h2>
-    </div>
-    <div class="how">
-      <article>
-        <h3>Its own session</h3>
-        <p>A GNOME Shell session mode and gnome-session units start the shell as
-          <code>gnome-shell --mode=hypede</code>. Defaults use <code>:HypeDE</code> sections, so they
-          never touch your regular GNOME session.</p>
-      </article>
-      <article>
-        <h3>KDE modules, embedded</h3>
-        <p>Settings loads modules with <code>KCModuleLoader</code>, the same function
-          <code>kcmshell6</code> uses, so both QML and widget-based modules fit inside the page.</p>
-      </article>
-      <article>
-        <h3>Its own configuration</h3>
-        <p>The session runs with a separate dconf database, <code>~/.config/dconf/hypede</code>.
-          Layouts and accessibility come over from GNOME on first login; GNOME extensions stay out
-          unless you allow them, and optional GNOME services start only if you switch them on.</p>
-      </article>
-      <article>
-        <h3>Honest limits</h3>
-        <p>KDE modules that configure KWin or PowerDevil would do nothing under GNOME, so those
-          pages talk to GSettings instead. Monitor arrangement still opens GNOME Settings.</p>
-      </article>
-    </div>
-    <pre class="tree"><code>shell/modes/hypede.json      top bar → shelf, enabled extensions
-shell/extension/…            shelf, launcher, overview, notifications
-session/                     login-screen session, gnome-session units
-apps/settings/               Settings: C++/QML, KCMUtils, GSettings, D-Bus
-apps/files/                  Files: Python, GTK 4, libadwaita</code></pre>
-  </section>
-
-  <section id="install" data-launcher="Install">
-    <div class="section-head">
-      <span class="eyebrow">Install</span>
-      <h2>Arch Linux and CachyOS</h2>
-      <p>Needs GNOME Shell 48–50. The build limits compile jobs to your free memory; force a value
-        with <code>JOBS=2 makepkg -si</code>.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div>
-        <h3>Build and install the package</h3>
-        <pre class="code"><code id="cmd-build">git clone https://github.com/hypede/hypede
+    <section class="install" id="install">
+      <h2>Install</h2>
+      <p>Arch Linux, CachyOS and derivatives, with GNOME Shell 48 or newer.</p>
+      <div class="code">
+        <pre id="cmd-install">git clone https://github.com/hypede/hypede
 cd hypede/packaging
-makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Copied" data-select="Selected">Copy</button></pre>
-      </div></div>
-      <div class="step"><div>
-        <h3>Add the KDE modules you want</h3>
-        <p>All optional. Without one, its row in Settings names the package to install.</p>
-        <pre class="code"><code id="cmd-kcm">sudo pacman -S plasma-nm bluedevil plasma-pa print-manager plasma-workspace \
-               plasma-desktop kde-cli-tools flatpak-kcm kinfocenter power-profiles-daemon</code><button type="button" data-copy="cmd-kcm" data-done="Copied" data-select="Selected">Copy</button></pre>
-      </div></div>
-      <div class="step"><div>
-        <h3>Log out and pick “HypeDE”</h3>
-        <p>The session appears on GDM, SDDM and other login screens that read
-          <code>/usr/share/wayland-sessions</code>.</p>
-      </div></div>
-    </div>
-    <p style="margin-top: 28px">Other distributions: <code>make &amp;&amp; sudo make install</code>, see the
-      <a href="https://github.com/hypede/hypede#other-distributions">README</a> for dependencies.
-      Only want the shelf in regular GNOME? <code>make install-user</code>.</p>
-  </section>
-
-  <footer>
-    <span>HypeDE is free software under the GPL-3.0-or-later.</span>
-    <a href="https://github.com/hypede/hypede">GitHub</a>
-    <a href="https://github.com/hypede/hypede/issues">Report a problem</a>
-    <a class="support" href="https://ko-fi.com/pycodder">Support me on Ko-fi</a>
-    <span>Not affiliated with Google. All artwork is original.</span>
-  </footer>
+makepkg -si</pre>
+        <button type="button" data-copy="cmd-install" data-done="Copied" data-select="Selected">Copy</button>
+      </div>
+      <p>Then log out and pick the HypeDE session on the login screen. KDE
+        modules for Settings are optional:</p>
+      <div class="code">
+        <pre id="cmd-kde">sudo pacman -S plasma-nm bluedevil plasma-pa print-manager plasma-workspace \
+               plasma-desktop kde-cli-tools flatpak-kcm kinfocenter</pre>
+        <button type="button" data-copy="cmd-kde" data-done="Copied" data-select="Selected">Copy</button>
+      </div>
+      <ul class="facts">
+        <li><b>Replaces nothing</b><span>No GNOME package is modified; the regular GNOME session stays.</span></li>
+        <li><b>Separate settings</b><span>HypeDE has its own database: ~/.config/dconf/hypede.</span></li>
+        <li><b>Lite mode</b><span>Turns off blur and extra effects on slower computers.</span></li>
+        <li><b>Free software</b><span>GPL-3.0. Wallpapers and sounds are made for HypeDE.</span></li>
+      </ul>
+    </section>
+  </div>
 </main>
 
-<nav class="shelf" aria-label="Site">
-  <button class="ring" type="button" aria-label="Launcher" aria-expanded="false" aria-controls="launcher"></button>
-  <div class="shelf-apps">
-    <a href="#parts" aria-label="What's inside"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Inside</span></a>
-    <a href="#yours" aria-label="Make it yours"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg><span>Yours</span></a>
-    <a href="#lock" aria-label="Lock screen"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2a5 5 0 0 1 5 5v3h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v3h6V7a3 3 0 0 0-3-3z"/></svg><span>Lock</span></a>
-    <a href="#how" aria-label="How it works"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 2h2v3.1a7 7 0 0 1 5.9 5.9H22v2h-3.1a7 7 0 0 1-5.9 5.9V22h-2v-3.1A7 7 0 0 1 5.1 13H2v-2h3.1A7 7 0 0 1 11 5.1zm1 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"/></svg><span>How</span></a>
-    <a href="#install" aria-label="Install"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M11 3h2v10.2l3.6-3.6 1.4 1.4-6 6-6-6 1.4-1.4 3.6 3.6zM4 19h16v2H4z"/></svg><span>Install</span></a>
-    <a href="https://github.com/hypede/hypede" aria-label="Source on GitHub"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8.6 7.4 4 12l4.6 4.6L7.2 18 1.2 12l6-6zm6.8 0L20 12l-4.6 4.6 1.4 1.4 6-6-6-6z"/></svg><span>Source</span></a>
+<footer>
+  <div class="wrap">
+    <span>HypeDE, GPL-3.0</span>
+    <a href="https://github.com/hypede/hypede">GitHub</a>
+    <a href="https://github.com/hypede/hypede/issues">Report a bug</a>
+    <a href="https://ko-fi.com/pycodder">Support on Ko-fi</a>
   </div>
-  <div class="tray" aria-label="Your local time">
-    <span class="date"></span>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c3.9 0 7.4 1.5 10 4l-10 11L2 9c2.6-2.5 6.1-4 10-4z"/></svg>
-    <span class="time"></span>
-  </div>
-</nav>
-
-<div class="bubble" id="launcher" hidden>
-  <label for="launcher-search">Search this page or type a sum</label>
-  <input id="launcher-search" type="search" placeholder="Install, Settings, 12*(3+4)…" autocomplete="off">
-  <div class="calc" hidden></div>
-  <ul></ul>
-</div>
+</footer>
 </body>
 </html>
