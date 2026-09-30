@@ -1,6 +1,6 @@
 # hypede.github.io
 
-The website of [HypeDE](https://github.com/hypede/hypede): GNOME, reshaped into a Chrome OS–style desktop.
+The website of [HypeDE](https://github.com/hypede/hypede): a Chrome OS–style desktop built on GNOME Shell.
 
 Plain static HTML, served by GitHub Pages from the `main` branch.
 
@@ -8,8 +8,7 @@ Plain static HTML, served by GitHub Pages from the `main` branch.
 index.html          English page
 ru/index.html       Russian page
 assets/site.css     styles (light and dark)
-assets/site.js      the page's shelf: clock, launcher search, copy buttons
-assets/calculator.js  the same calculator HypeDE's launcher uses
+assets/site.js      copy buttons for the install commands
 assets/img/         screenshots (WebP) and artwork from the main repository
 ```
 
