@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Troubleshooting — HypeDE Wiki</title>
+<meta name="description" content="An app shows only a close button
+HypeDE writes the button layout for GTK 3, GTK 4 and libadwaita apps at sign-in. If one still shows
+only ×:">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="ru/troubleshooting.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script type="module" src="../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Nothing found">
+<header class="wiki-top">
+  <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Wiki</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Search the wiki</span>
+    <input type="search" placeholder="Search the wiki" autocomplete="off"></label>
+  <a class="lang" href="ru/troubleshooting.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Wiki">
+    <ul><li><a href="index.html">Getting started</a></li><li><a href="launcher.html">Shelf and launcher</a></li><li><a href="keys.html">Keys and gestures</a></li><li><a href="windows.html">Windows</a></li><li><a href="desktop.html">Desktop</a></li><li><a href="modes.html">Focus modes</a></li><li><a href="themes.html">Themes and the theme store</a></li><li><a href="assistant.html">AI assistant</a></li><li><a href="settings.html">Settings</a></li><li><a href="troubleshooting.html" aria-current="page">Troubleshooting</a></li><li><a href="developers.html">For developers</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="an-app-shows-only-a-close-button">An app shows only a close button</h2>
+<p>HypeDE writes the button layout for GTK 3, GTK 4 and libadwaita apps at sign-in. If one still shows
+only ×:</p>
+<ul>
+<li>sign out and back in once after installing or updating HypeDE;</li>
+<li>check <em>Settings → Personalization → Windows → Window buttons</em>;</li>
+<li>restart Flatpak apps after changing the layout;</li>
+<li>Qt apps need <code>qadwaitadecorations-qt6</code> for GNOME-style title bars.</li>
+</ul>
+<h2 id="the-desktop-feels-slow">The desktop feels slow</h2>
+<ul>
+<li>turn on <strong>Lite mode</strong> in <em>Personalization → Animations and effects</em>: no blur, live wallpapers,
+  rounded-corner effect or lock screen waves;</li>
+<li>turn off live wallpaper, or keep <em>Pause under maximized windows</em> on;</li>
+<li>lower <em>Animation speed</em> or switch off <em>Genie minimize</em> and <em>Jelly windows</em>.</li>
+</ul>
+<h2 id="a-setting-does-nothing">A setting does nothing</h2>
+<p>HypeDE keeps its own settings database. Running <code>gsettings</code> from a terminal outside the HypeDE session
+changes regular GNOME, not HypeDE. Inside a HypeDE session it works as expected.</p>
+<h2 id="start-from-scratch">Start from scratch</h2>
+<p>Reset all HypeDE settings (regular GNOME is untouched), then sign out and back in:</p>
+<pre class="code"><code>DCONF_PROFILE=hypede dconf reset -f /
+</code></pre>
+<h2 id="the-theme-store-is-empty">The theme store is empty</h2>
+<p>The store loads from GitHub. Without a connection Settings shows the last list it saw. Press
+<strong>Refresh</strong> once you are online.</p>
+<h2 id="logs">Logs</h2>
+<pre class="code"><code>journalctl --user -b | grep -i -E &quot;hypede|gnome-shell&quot;
+</code></pre>
+<p>Attach the relevant lines when you <a href="https://github.com/hypede/hypede/issues">report a problem</a>.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/en/troubleshooting.md">Edit this page</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="On this page">
+    <span>On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#an-app-shows-only-a-close-button">An app shows only a close button</a></li>
+<li><a href="#the-desktop-feels-slow">The desktop feels slow</a></li>
+<li><a href="#a-setting-does-nothing">A setting does nothing</a></li>
+<li><a href="#start-from-scratch">Start from scratch</a></li>
+<li><a href="#the-theme-store-is-empty">The theme store is empty</a></li>
+<li><a href="#logs">Logs</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

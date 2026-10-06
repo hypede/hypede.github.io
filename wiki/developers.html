@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For developers — HypeDE Wiki</title>
+<meta name="description" content="Build from source
+git clone https://github.com/hypede/hypede
+cd hypede
+make &amp;amp;&amp;amp; sudo make install
+
+make install-user installs only the shell extension in">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="ru/developers.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script type="module" src="../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Nothing found">
+<header class="wiki-top">
+  <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Wiki</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Search the wiki</span>
+    <input type="search" placeholder="Search the wiki" autocomplete="off"></label>
+  <a class="lang" href="ru/developers.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Wiki">
+    <ul><li><a href="index.html">Getting started</a></li><li><a href="launcher.html">Shelf and launcher</a></li><li><a href="keys.html">Keys and gestures</a></li><li><a href="windows.html">Windows</a></li><li><a href="desktop.html">Desktop</a></li><li><a href="modes.html">Focus modes</a></li><li><a href="themes.html">Themes and the theme store</a></li><li><a href="assistant.html">AI assistant</a></li><li><a href="settings.html">Settings</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="developers.html" aria-current="page">For developers</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="for-developers">For developers</h1>
+<h2 id="build-from-source">Build from source</h2>
+<pre class="code"><code>git clone https://github.com/hypede/hypede
+cd hypede
+make &amp;&amp; sudo make install
+</code></pre>
+<p><code>make install-user</code> installs only the shell extension into <code>~/.local</code> for use in regular GNOME.</p>
+<h2 id="layout">Layout</h2>
+<pre class="code"><code>shell/extension/   shell: shelf, launcher, widgets, window effects, gestures, lock screen
+shell/theme/       stylesheet template (tools/gen-shell-css.py writes light and dark)
+session/           session startup, systemd units, password check
+apps/settings/     Settings (C++, QML, KCMUtils)
+apps/files/        Files (Python, GTK 4)
+apps/assistant/    AI assistant (Python, WebKitGTK)
+apps/theme/        hypede-theme: themes, store, file checks
+store/             theme store catalogue and built-in store themes
+data/              schemas, icons, sounds, wallpapers, themes
+tools/             generators, translations, dev scripts
+</code></pre>
+<h2 id="running-the-shell-without-a-session">Running the shell without a session</h2>
+<p><code>tools/dev/shell-headless.sh start 1600x900</code> runs a nested headless GNOME Shell with HypeDE;
+<code>eval</code> runs JavaScript in it, <code>shot FILE</code> takes a screenshot.</p>
+<h2 id="translations">Translations</h2>
+<p>English is the source. Russian strings live in <code>tools/i18n/settings_ru.py</code> (Settings) and
+<code>tools/i18n/po_ru.py</code> (shell). <code>make pot</code> regenerates <code>po/</code>.</p>
+<h2 id="tests">Tests</h2>
+<pre class="code"><code>python3 -m unittest discover -s apps/theme/tests -t apps/theme
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>Pull requests and issues are welcome on <a href="https://github.com/hypede/hypede">GitHub</a>. Themes go through
+the <a href="themes.html#publishing-your-theme">theme store</a>, not pull requests.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/en/developers.md">Edit this page</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="On this page">
+    <span>On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#build-from-source">Build from source</a></li>
+<li><a href="#layout">Layout</a></li>
+<li><a href="#running-the-shell-without-a-session">Running the shell without a session</a></li>
+<li><a href="#translations">Translations</a></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#contributing">Contributing</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

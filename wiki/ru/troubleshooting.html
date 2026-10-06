@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Если что-то не так — HypeDE Вики</title>
+<meta name="description" content="У приложения только кнопка «Закрыть»
+HypeDE прописывает набор кнопок для приложений на GTK 3, GTK 4 и libadwaita при входе. Если у
+приложения всё равно только ×">
+<link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="../troubleshooting.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/wiki.css">
+<script type="module" src="../../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Ничего не найдено">
+<header class="wiki-top">
+  <a class="brand" href="../../ru/"><img src="../../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Вики</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Поиск по вики</span>
+    <input type="search" placeholder="Поиск по вики" autocomplete="off"></label>
+  <a class="lang" href="../troubleshooting.html" hreflang="en" lang="en">English</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Вики">
+    <ul><li><a href="index.html">Начало работы</a></li><li><a href="launcher.html">Полка и лаунчер</a></li><li><a href="keys.html">Клавиши и жесты</a></li><li><a href="windows.html">Окна</a></li><li><a href="desktop.html">Рабочий стол</a></li><li><a href="modes.html">Режимы фокуса</a></li><li><a href="themes.html">Темы и магазин тем</a></li><li><a href="assistant.html">ИИ-помощник</a></li><li><a href="settings.html">Настройки</a></li><li><a href="troubleshooting.html" aria-current="page">Если что-то не так</a></li><li><a href="developers.html">Разработчикам</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="если-что-то-не-так">Если что-то не так</h1>
+<h2 id="у-приложения-только-кнопка-закрыть">У приложения только кнопка «Закрыть»</h2>
+<p>HypeDE прописывает набор кнопок для приложений на GTK 3, GTK 4 и libadwaita при входе. Если у
+приложения всё равно только ×:</p>
+<ul>
+<li>после установки или обновления HypeDE один раз выйдите и войдите снова;</li>
+<li>проверьте <em>Настройки → Персонализация → Окна → Кнопки окна</em>;</li>
+<li>перезапустите Flatpak-приложения после смены набора кнопок;</li>
+<li>приложениям на Qt нужен <code>qadwaitadecorations-qt6</code> для заголовка в стиле GNOME.</li>
+</ul>
+<h2 id="всё-подтормаживает">Всё подтормаживает</h2>
+<ul>
+<li>включите <strong>Облегчённый режим</strong> в <em>Персонализация → Анимации и эффекты</em>: без размытия, живых обоев,
+  скругления окон и волн на экране блокировки;</li>
+<li>выключите живые обои или оставьте включённой <em>Паузу под развёрнутыми окнами</em>;</li>
+<li>уменьшите <em>Скорость анимаций</em> или выключите <em>Сворачивание «джинном»</em> и <em>Желейные окна</em>.</li>
+</ul>
+<h2 id="настройка-не-срабатывает">Настройка не срабатывает</h2>
+<p>У HypeDE своя база настроек. <code>gsettings</code> из терминала вне сеанса HypeDE меняет обычный GNOME, а не
+HypeDE. Внутри сеанса HypeDE всё работает как обычно.</p>
+<h2 id="начать-с-чистого-листа">Начать с чистого листа</h2>
+<p>Сбросить все настройки HypeDE (обычный GNOME не пострадает), затем выйти и войти:</p>
+<pre class="code"><code>DCONF_PROFILE=hypede dconf reset -f /
+</code></pre>
+<h2 id="магазин-тем-пустой">Магазин тем пустой</h2>
+<p>Магазин загружается с GitHub. Без сети «Настройки» показывают последний полученный список. Нажмите
+<strong>Обновить</strong>, когда появится интернет.</p>
+<h2 id="журналы">Журналы</h2>
+<pre class="code"><code>journalctl --user -b | grep -i -E &quot;hypede|gnome-shell&quot;
+</code></pre>
+<p>Приложите нужные строки, когда <a href="https://github.com/hypede/hypede/issues">сообщаете о проблеме</a>.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/ru/troubleshooting.md">Исправить страницу</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="На этой странице">
+    <span>На этой странице</span>
+    <div class="toc">
+<ul>
+<li><a href="#у-приложения-только-кнопка-закрыть">У приложения только кнопка «Закрыть»</a></li>
+<li><a href="#всё-подтормаживает">Всё подтормаживает</a></li>
+<li><a href="#настройка-не-срабатывает">Настройка не срабатывает</a></li>
+<li><a href="#начать-с-чистого-листа">Начать с чистого листа</a></li>
+<li><a href="#магазин-тем-пустой">Магазин тем пустой</a></li>
+<li><a href="#журналы">Журналы</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

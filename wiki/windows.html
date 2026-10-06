@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Windows — HypeDE Wiki</title>
+<meta name="description" content="Title bar buttons
+Minimise, maximise and close are shown for GTK 3, GTK 4 and libadwaita apps. Qt apps get GNOME-style
+title bars with qadwaitadecorations-qt6 (">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="ru/windows.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script type="module" src="../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Nothing found">
+<header class="wiki-top">
+  <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Wiki</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Search the wiki</span>
+    <input type="search" placeholder="Search the wiki" autocomplete="off"></label>
+  <a class="lang" href="ru/windows.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Wiki">
+    <ul><li><a href="index.html">Getting started</a></li><li><a href="launcher.html">Shelf and launcher</a></li><li><a href="keys.html">Keys and gestures</a></li><li><a href="windows.html" aria-current="page">Windows</a></li><li><a href="desktop.html">Desktop</a></li><li><a href="modes.html">Focus modes</a></li><li><a href="themes.html">Themes and the theme store</a></li><li><a href="assistant.html">AI assistant</a></li><li><a href="settings.html">Settings</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="developers.html">For developers</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="windows">Windows</h1>
+<h2 id="title-bar-buttons">Title bar buttons</h2>
+<p>Minimise, maximise and close are shown for GTK 3, GTK 4 and libadwaita apps. Qt apps get GNOME-style
+title bars with <code>qadwaitadecorations-qt6</code> (AUR). Change the buttons in <em>Settings → Personalization →
+Windows</em>. If an app still shows only a close button, see <a href="troubleshooting.html">Troubleshooting</a>.</p>
+<h2 id="effects">Effects</h2>
+<table>
+<thead>
+<tr>
+<th>Effect</th>
+<th>What it does</th>
+<th>Switch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soft animations</td>
+<td>windows grow in with a slight spring and fade out</td>
+<td><em>Window animations</em></td>
+</tr>
+<tr>
+<td>Genie minimise</td>
+<td>the window flows into its shelf icon</td>
+<td><em>Genie minimize</em></td>
+</tr>
+<tr>
+<td>Jelly windows</td>
+<td>the window bends a little while you drag it and springs back</td>
+<td><em>Jelly windows</em></td>
+</tr>
+<tr>
+<td>Rounded corners</td>
+<td>for apps that draw square corners without a shadow</td>
+<td><em>Rounded window corners</em></td>
+</tr>
+</tbody>
+</table>
+<p>All are in <em>Settings → Personalization → Animations and effects</em>. <strong>Lite mode</strong> turns off blur and the
+heavier effects on slower computers.</p>
+<h2 id="useful-tricks">Useful tricks</h2>
+<ul>
+<li><kbd>Super</kbd>+<kbd>Z</kbd> floats a window: it becomes small and stays above the others —
+  handy for a video or a calculator.</li>
+<li><kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> reopens the last ten closed windows, newest first.</li>
+</ul>
+<h2 id="session-restore">Session restore</h2>
+<p>HypeDE remembers which windows are open, on which desk, where and how big. At sign-in it offers to
+reopen them. Choose <em>Ask</em>, <em>Always</em> or <em>Never</em> in <em>Settings → System preferences → Session</em>. You can
+also type <code>save session</code> or <code>restore session</code> in the launcher.</p>
+<p>Apps reopen as new windows: documents inside them are restored only if the app itself does that.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/en/windows.md">Edit this page</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="On this page">
+    <span>On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#title-bar-buttons">Title bar buttons</a></li>
+<li><a href="#effects">Effects</a></li>
+<li><a href="#useful-tricks">Useful tricks</a></li>
+<li><a href="#session-restore">Session restore</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

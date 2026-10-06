@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Getting started — HypeDE Wiki</title>
+<meta name="description" content="HypeDE is a Chrome OS–style desktop that runs on top of an unmodified GNOME Shell. It installs as a
+separate session: your regular GNOME stays as it was, and Hy">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="ru/index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script type="module" src="../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Nothing found">
+<header class="wiki-top">
+  <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Wiki</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Search the wiki</span>
+    <input type="search" placeholder="Search the wiki" autocomplete="off"></label>
+  <a class="lang" href="ru/index.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Wiki">
+    <ul><li><a href="index.html" aria-current="page">Getting started</a></li><li><a href="launcher.html">Shelf and launcher</a></li><li><a href="keys.html">Keys and gestures</a></li><li><a href="windows.html">Windows</a></li><li><a href="desktop.html">Desktop</a></li><li><a href="modes.html">Focus modes</a></li><li><a href="themes.html">Themes and the theme store</a></li><li><a href="assistant.html">AI assistant</a></li><li><a href="settings.html">Settings</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="developers.html">For developers</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="getting-started">Getting started</h1>
+<p>HypeDE is a Chrome OS–style desktop that runs on top of an unmodified GNOME Shell. It installs as a
+separate session: your regular GNOME stays as it was, and HypeDE keeps its own settings.</p>
+<h2 id="install">Install</h2>
+<p>Arch Linux, CachyOS and other Arch-based systems with GNOME Shell 48–50:</p>
+<pre class="code"><code>git clone https://github.com/hypede/hypede
+cd hypede/packaging
+makepkg -si
+</code></pre>
+<p>KDE modules for Settings are optional. Without one, its row in Settings names the package to install:</p>
+<pre class="code"><code>sudo pacman -S plasma-nm bluedevil plasma-pa print-manager plasma-workspace \
+               plasma-desktop kde-cli-tools flatpak-kcm kinfocenter power-profiles-daemon
+</code></pre>
+<p>The AI assistant needs <code>webkitgtk-6.0</code>. Other distributions: <code>make &amp;&amp; sudo make install</code>, see the
+<a href="https://github.com/hypede/hypede#other-distributions">README</a> for dependencies.</p>
+<h2 id="first-sign-in">First sign-in</h2>
+<ol>
+<li>Log out and pick <strong>HypeDE</strong> on the login screen (GDM, SDDM, greetd and LightDM all show it).</li>
+<li>HypeDE copies your keyboard layouts, mouse, touchpad, accessibility and shortcut settings from GNOME.</li>
+<li>A short greeting appears; turn it off in <strong>Settings → Personalization → Animations and effects</strong>.</li>
+</ol>
+<h2 id="where-things-are">Where things are</h2>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launcher</td>
+<td>the circle at the start of the shelf, or the <kbd>Super</kbd> key</td>
+</tr>
+<tr>
+<td>Quick settings</td>
+<td>click the clock in the corner of the shelf</td>
+</tr>
+<tr>
+<td>Calendar and notifications</td>
+<td>click the date next to it</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>the gear on the shelf, or type a setting's name in the launcher</td>
+</tr>
+<tr>
+<td>Files</td>
+<td>the folder icon on the shelf</td>
+</tr>
+</tbody>
+</table>
+<h2 id="next">Next</h2>
+<ul>
+<li><a href="launcher.html">Shelf and launcher</a> — commands you can type into the launcher</li>
+<li><a href="keys.html">Keys and gestures</a></li>
+<li><a href="themes.html">Themes and the theme store</a></li>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/en/index.md">Edit this page</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="On this page">
+    <span>On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#first-sign-in">First sign-in</a></li>
+<li><a href="#where-things-are">Where things are</a></li>
+<li><a href="#next">Next</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

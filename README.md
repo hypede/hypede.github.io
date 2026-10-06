@@ -16,3 +16,12 @@ Preview locally with `python3 -m http.server` and open http://localhost:8000.
 
 Screenshots come from `docs/images` in the main repository
 (`tools/dev/screenshots.sh`), converted to WebP.
+
+## Wiki
+
+Pages are written in Markdown in `wiki-src/en` and `wiki-src/ru`. Build them into `wiki/` with:
+
+```
+pip install markdown
+python3 tools/build-wiki.py
+```

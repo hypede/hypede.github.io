@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Начало работы — HypeDE Вики</title>
+<meta name="description" content="HypeDE — рабочий стол в духе Chrome OS поверх нетронутого GNOME Shell. Он ставится отдельным сеансом:
+обычный GNOME остаётся как был, а у HypeDE свои настройки.">
+<link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="../index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/wiki.css">
+<script type="module" src="../../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Ничего не найдено">
+<header class="wiki-top">
+  <a class="brand" href="../../ru/"><img src="../../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Вики</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Поиск по вики</span>
+    <input type="search" placeholder="Поиск по вики" autocomplete="off"></label>
+  <a class="lang" href="../index.html" hreflang="en" lang="en">English</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Вики">
+    <ul><li><a href="index.html" aria-current="page">Начало работы</a></li><li><a href="launcher.html">Полка и лаунчер</a></li><li><a href="keys.html">Клавиши и жесты</a></li><li><a href="windows.html">Окна</a></li><li><a href="desktop.html">Рабочий стол</a></li><li><a href="modes.html">Режимы фокуса</a></li><li><a href="themes.html">Темы и магазин тем</a></li><li><a href="assistant.html">ИИ-помощник</a></li><li><a href="settings.html">Настройки</a></li><li><a href="troubleshooting.html">Если что-то не так</a></li><li><a href="developers.html">Разработчикам</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="начало-работы">Начало работы</h1>
+<p>HypeDE — рабочий стол в духе Chrome OS поверх нетронутого GNOME Shell. Он ставится отдельным сеансом:
+обычный GNOME остаётся как был, а у HypeDE свои настройки.</p>
+<h2 id="установка">Установка</h2>
+<p>Arch Linux, CachyOS и другие системы на базе Arch с GNOME Shell 48–50:</p>
+<pre class="code"><code>git clone https://github.com/hypede/hypede
+cd hypede/packaging
+makepkg -si
+</code></pre>
+<p>Модули KDE для «Настроек» необязательны. Если модуля нет, его строка в «Настройках» подскажет, какой
+пакет поставить:</p>
+<pre class="code"><code>sudo pacman -S plasma-nm bluedevil plasma-pa print-manager plasma-workspace \
+               plasma-desktop kde-cli-tools flatpak-kcm kinfocenter power-profiles-daemon
+</code></pre>
+<p>ИИ-помощнику нужен <code>webkitgtk-6.0</code>. Другие дистрибутивы: <code>make &amp;&amp; sudo make install</code>, зависимости —
+в <a href="https://github.com/hypede/hypede#other-distributions">README</a>.</p>
+<h2 id="первый-вход">Первый вход</h2>
+<ol>
+<li>Выйдите из системы и выберите <strong>HypeDE</strong> на экране входа (его видят GDM, SDDM, greetd и LightDM).</li>
+<li>HypeDE перенесёт из GNOME раскладки, настройки мыши, тачпада, специальных возможностей и сочетания клавиш.</li>
+<li>Появится короткое приветствие; отключается в <em>Настройки → Персонализация → Анимации и эффекты</em>.</li>
+</ol>
+<h2 id="где-что-находится">Где что находится</h2>
+<table>
+<thead>
+<tr>
+<th>Что</th>
+<th>Где</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Лаунчер</td>
+<td>кружок в начале полки или клавиша <kbd>Super</kbd></td>
+</tr>
+<tr>
+<td>Быстрые настройки</td>
+<td>нажмите на часы в углу полки</td>
+</tr>
+<tr>
+<td>Календарь и уведомления</td>
+<td>нажмите на дату рядом</td>
+</tr>
+<tr>
+<td>Настройки</td>
+<td>шестерёнка на полке или название настройки в лаунчере</td>
+</tr>
+<tr>
+<td>Файлы</td>
+<td>значок папки на полке</td>
+</tr>
+</tbody>
+</table>
+<h2 id="дальше">Дальше</h2>
+<ul>
+<li><a href="launcher.html">Полка и лаунчер</a> — команды, которые можно набрать в лаунчере</li>
+<li><a href="keys.html">Клавиши и жесты</a></li>
+<li><a href="themes.html">Темы и магазин тем</a></li>
+<li><a href="troubleshooting.html">Если что-то не так</a></li>
+</ul>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/ru/index.md">Исправить страницу</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="На этой странице">
+    <span>На этой странице</span>
+    <div class="toc">
+<ul>
+<li><a href="#установка">Установка</a></li>
+<li><a href="#первый-вход">Первый вход</a></li>
+<li><a href="#где-что-находится">Где что находится</a></li>
+<li><a href="#дальше">Дальше</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

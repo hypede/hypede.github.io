@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Settings — HypeDE Wiki</title>
+<meta name="description" content="One window for everything, laid out like Chrome OS: search at the top, pages on the left.">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="ru/settings.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script type="module" src="../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Nothing found">
+<header class="wiki-top">
+  <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Wiki</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Search the wiki</span>
+    <input type="search" placeholder="Search the wiki" autocomplete="off"></label>
+  <a class="lang" href="ru/settings.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Wiki">
+    <ul><li><a href="index.html">Getting started</a></li><li><a href="launcher.html">Shelf and launcher</a></li><li><a href="keys.html">Keys and gestures</a></li><li><a href="windows.html">Windows</a></li><li><a href="desktop.html">Desktop</a></li><li><a href="modes.html">Focus modes</a></li><li><a href="themes.html">Themes and the theme store</a></li><li><a href="assistant.html">AI assistant</a></li><li><a href="settings.html" aria-current="page">Settings</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="developers.html">For developers</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="settings">Settings</h1>
+<p>One window for everything, laid out like Chrome OS: search at the top, pages on the left.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>What is there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network, Bluetooth</td>
+<td>KDE modules (<code>plasma-nm</code>, <code>bluedevil</code>), proxy</td>
+</tr>
+<tr>
+<td>Device</td>
+<td>displays, mouse, touchpad, keyboard and shortcuts, sound and printers, power, storage</td>
+</tr>
+<tr>
+<td>Personalization</td>
+<td>themes, theme store, wallpaper, live wallpaper, desktop, widgets, style, animations</td>
+</tr>
+<tr>
+<td>Shelf and launcher</td>
+<td>position, style, size, what the launcher searches</td>
+</tr>
+<tr>
+<td>Lock screen</td>
+<td>clock style, colours, waves, cards, wallpaper, message</td>
+</tr>
+<tr>
+<td>Security and privacy</td>
+<td>history of recent files, protection</td>
+</tr>
+<tr>
+<td>Apps</td>
+<td>installed apps, default apps, notifications</td>
+</tr>
+<tr>
+<td>AI assistant</td>
+<td>provider and sign-in</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>text size, contrast, zoom, screen reader</td>
+</tr>
+<tr>
+<td>System preferences</td>
+<td>date and time, languages, boot splash, hardware, accounts, GNOME services, focus modes, session, startup apps, HypeDE configuration</td>
+</tr>
+</tbody>
+</table>
+<h2 id="search">Search</h2>
+<p>Type in the search field at the top: it finds pages and individual settings, in English and Russian.</p>
+<h2 id="backup">Backup</h2>
+<p><em>System preferences → HypeDE configuration</em> saves all HypeDE settings to a file and restores them. HypeDE's settings
+live in their own database, <code>~/.config/dconf/hypede</code>, separate from regular GNOME.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/en/settings.md">Edit this page</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="On this page">
+    <span>On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#search">Search</a></li>
+<li><a href="#backup">Backup</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Themes and the theme store — HypeDE Wiki</title>
+<meta name="description" content="A theme sets the whole look in one click: colours, wallpaper, shelf, launcher, windows, lock screen,
+fonts, icons and sounds. Everything is in Settings → Person">
+<link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="ru" href="ru/themes.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script type="module" src="../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Nothing found">
+<header class="wiki-top">
+  <a class="brand" href="../"><img src="../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Wiki</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Search the wiki</span>
+    <input type="search" placeholder="Search the wiki" autocomplete="off"></label>
+  <a class="lang" href="ru/themes.html" hreflang="ru" lang="ru">Русский</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Wiki">
+    <ul><li><a href="index.html">Getting started</a></li><li><a href="launcher.html">Shelf and launcher</a></li><li><a href="keys.html">Keys and gestures</a></li><li><a href="windows.html">Windows</a></li><li><a href="desktop.html">Desktop</a></li><li><a href="modes.html">Focus modes</a></li><li><a href="themes.html" aria-current="page">Themes and the theme store</a></li><li><a href="assistant.html">AI assistant</a></li><li><a href="settings.html">Settings</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li><li><a href="developers.html">For developers</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="themes-and-the-theme-store">Themes and the theme store</h1>
+<p>A theme sets the whole look in one click: colours, wallpaper, shelf, launcher, windows, lock screen,
+fonts, icons and sounds. Everything is in <em>Settings → Personalization</em>.</p>
+<h2 id="using-themes">Using themes</h2>
+<ul>
+<li><strong>Apply</strong>: click a theme under <em>Themes</em>.</li>
+<li><strong>Save your look</strong>: <em>Save current look as a theme</em>. Your own wallpapers are copied next to it.</li>
+<li><strong>Export</strong>: <em>Export current look</em> writes a <code>.json</code> file with your wallpapers packed inside — send
+  it to anyone. <strong>Import</strong> adds such a file to your themes.</li>
+<li><strong>Delete</strong>: hover over your own theme and click the bin.</li>
+</ul>
+<h2 id="the-theme-store">The theme store</h2>
+<p><em>Theme store</em> lists themes published on GitHub. <strong>Install</strong> downloads, checks and applies a theme;
+it then appears among your themes. <strong>Reviewed by HypeDE</strong> means a maintainer looked at that exact
+version; <em>Not reviewed yet</em> themes passed the automatic checks only.</p>
+<p>You can also paste any repository link into the field under the store and press <strong>Install</strong>.</p>
+<h2 id="publishing-your-theme">Publishing your theme</h2>
+<ol>
+<li>Set up the look you want and choose <em>Export current look</em>.</li>
+<li>Create a public GitHub repository and put the file in its root as <strong><code>theme.json</code></strong>.</li>
+<li>Optionally add <strong><code>preview.png</code></strong> — a 16:9 screenshot, up to 4 MB.</li>
+<li>In <em>Theme store</em>, paste the repository link and press <strong>Publish</strong>.</li>
+<li>HypeDE checks the repository and opens a ready request on GitHub. Submit it: within a minute a bot
+   checks the theme again, adds it to the store and closes the request.</li>
+</ol>
+<p>The store keeps the exact commit it checked. To publish changes, push them and open a new request
+(<strong>Publish</strong> again): the bot moves the store to your new commit.</p>
+<h2 id="what-is-checked">What is checked</h2>
+<p>A theme is data, never code, and HypeDE treats every downloaded theme as untrusted:</p>
+<ul>
+<li>only appearance settings from a fixed list are applied, each checked by type and allowed range;</li>
+<li>a picture must really be the format its name says; it is decoded and re-encoded in a separate
+  process with memory and time limits, so only the pixels survive;</li>
+<li>SVG files may not contain scripts, event handlers, external links, entities or embedded files;</li>
+<li>videos must be MP4, WebM, MKV or MOV and are probed before use; files are limited to 64 MB;</li>
+<li>if ClamAV is installed, every file is scanned with it;</li>
+<li>a downloaded theme may use wallpapers only from system folders and its own folder;</li>
+<li>the store pins each theme to a commit, so an author cannot silently change a published theme.</li>
+</ul>
+<h2 id="file-format">File format</h2>
+<p>A theme is a JSON file with <code>"hypede-theme": 1</code>, a <code>name</code> and any of these groups:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>colors</code></td>
+<td><code>scheme</code> (<code>default</code>, <code>prefer-dark</code>), <code>accent</code> (<code>#rrggbb</code>), <code>gnome-accent</code>, <code>shelf</code>, <code>menus</code></td>
+</tr>
+<tr>
+<td><code>wallpaper</code></td>
+<td><code>light</code>, <code>dark</code>, <code>fit</code>, <code>color</code>, <code>live</code>, <code>live-speed</code></td>
+</tr>
+<tr>
+<td><code>shelf</code></td>
+<td><code>position</code>, <code>alignment</code>, <code>style</code>, <code>size</code>, <code>icon-size</code>, <code>opacity</code>, <code>blur</code>, <code>indicator</code>, <code>hover-zoom</code>, <code>show-date</code></td>
+</tr>
+<tr>
+<td><code>launcher</code></td>
+<td><code>style</code>, <code>columns</code>, <code>icon-size</code>, <code>labels</code>, <code>opacity</code>, <code>blur</code></td>
+</tr>
+<tr>
+<td><code>desktop</code></td>
+<td><code>icons</code>, <code>icon-size</code>, <code>show-home</code>, <code>show-trash</code></td>
+</tr>
+<tr>
+<td><code>windows</code></td>
+<td><code>corner-radius</code>, <code>rounded-windows</code>, <code>window-radius</code>, <code>animations</code>, <code>animation-speed</code>, <code>genie</code>, <code>jelly</code>, <code>buttons</code>, <code>notifications</code>, <code>greeting</code></td>
+</tr>
+<tr>
+<td><code>lockscreen</code></td>
+<td><code>style</code>, <code>clock</code>, <code>clock-color</code>, <code>clock-size</code>, <code>message</code>, <code>wallpaper</code>, <code>blur</code>, <code>dim</code>, <code>waves</code>, <code>cards</code></td>
+</tr>
+<tr>
+<td><code>fonts</code></td>
+<td><code>interface</code>, <code>documents</code>, <code>monospace</code></td>
+</tr>
+<tr>
+<td><code>icons</code></td>
+<td><code>theme</code>, <code>cursor</code>, <code>cursor-size</code></td>
+</tr>
+<tr>
+<td><code>sounds</code></td>
+<td><code>theme</code></td>
+</tr>
+</tbody>
+</table>
+<p>Wallpapers are <code>file:///usr/share/…</code> paths or <code>embedded:NAME</code> pointing into a <code>files</code> object of
+base64-encoded pictures. Example:</p>
+<pre class="code"><code>{
+  &quot;hypede-theme&quot;: 1,
+  &quot;name&quot;: &quot;Deep Forest&quot;,
+  &quot;author&quot;: &quot;you&quot;,
+  &quot;description&quot;: &quot;Moss green on dark pine.&quot;,
+  &quot;colors&quot;: { &quot;scheme&quot;: &quot;prefer-dark&quot;, &quot;gnome-accent&quot;: &quot;green&quot;, &quot;accent&quot;: &quot;#9bd77c&quot;,
+              &quot;shelf&quot;: &quot;#0e1a12&quot;, &quot;menus&quot;: &quot;#132219&quot; },
+  &quot;wallpaper&quot;: { &quot;light&quot;: &quot;file:///usr/share/hypede/wallpapers/forest.svg&quot;,
+                 &quot;dark&quot;: &quot;file:///usr/share/hypede/wallpapers/forest.svg&quot; },
+  &quot;shelf&quot;: { &quot;style&quot;: &quot;floating&quot;, &quot;opacity&quot;: 82 },
+  &quot;windows&quot;: { &quot;corner-radius&quot;: 20, &quot;genie&quot;: true }
+}
+</code></pre>
+<p>From a terminal: <code>hypede-theme list</code>, <code>apply</code>, <code>save</code>, <code>export</code>, <code>import</code>, <code>install</code>, <code>check</code>.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/en/themes.md">Edit this page</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="On this page">
+    <span>On this page</span>
+    <div class="toc">
+<ul>
+<li><a href="#using-themes">Using themes</a></li>
+<li><a href="#the-theme-store">The theme store</a></li>
+<li><a href="#publishing-your-theme">Publishing your theme</a></li>
+<li><a href="#what-is-checked">What is checked</a></li>
+<li><a href="#file-format">File format</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>

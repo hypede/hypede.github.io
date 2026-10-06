@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Разработчикам — HypeDE Вики</title>
+<meta name="description" content="Сборка из исходников
+git clone https://github.com/hypede/hypede
+cd hypede
+make &amp;amp;&amp;amp; sudo make install
+
+make install-user ставит только расширение оболочки">
+<link rel="icon" href="../../assets/img/logo.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="../developers.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/wiki.css">
+<script type="module" src="../../assets/wiki.js"></script>
+</head>
+<body class="wiki" data-index="search.json" data-nothing="Ничего не найдено">
+<header class="wiki-top">
+  <a class="brand" href="../../ru/"><img src="../../assets/img/logo.svg" alt="" width="28" height="28">HypeDE <span>Вики</span></a>
+  <label class="wiki-search"><span class="visually-hidden">Поиск по вики</span>
+    <input type="search" placeholder="Поиск по вики" autocomplete="off"></label>
+  <a class="lang" href="../developers.html" hreflang="en" lang="en">English</a>
+</header>
+<div class="wiki-layout">
+  <nav class="wiki-nav" aria-label="Вики">
+    <ul><li><a href="index.html">Начало работы</a></li><li><a href="launcher.html">Полка и лаунчер</a></li><li><a href="keys.html">Клавиши и жесты</a></li><li><a href="windows.html">Окна</a></li><li><a href="desktop.html">Рабочий стол</a></li><li><a href="modes.html">Режимы фокуса</a></li><li><a href="themes.html">Темы и магазин тем</a></li><li><a href="assistant.html">ИИ-помощник</a></li><li><a href="settings.html">Настройки</a></li><li><a href="troubleshooting.html">Если что-то не так</a></li><li><a href="developers.html" aria-current="page">Разработчикам</a></li></ul>
+    <ol class="wiki-results" hidden></ol>
+  </nav>
+  <main class="wiki-page">
+<h1 id="разработчикам">Разработчикам</h1>
+<h2 id="сборка-из-исходников">Сборка из исходников</h2>
+<pre class="code"><code>git clone https://github.com/hypede/hypede
+cd hypede
+make &amp;&amp; sudo make install
+</code></pre>
+<p><code>make install-user</code> ставит только расширение оболочки в <code>~/.local</code> — для обычного GNOME.</p>
+<h2 id="устройство">Устройство</h2>
+<pre class="code"><code>shell/extension/   оболочка: полка, лаунчер, виджеты, эффекты окон, жесты, экран блокировки
+shell/theme/       шаблон стилей (tools/gen-shell-css.py пишет светлый и тёмный)
+session/           запуск сеанса, юниты systemd, проверка пароля
+apps/settings/     «Настройки» (C++, QML, KCMUtils)
+apps/files/        «Файлы» (Python, GTK 4)
+apps/assistant/    ИИ-помощник (Python, WebKitGTK)
+apps/theme/        hypede-theme: темы, магазин, проверка файлов
+store/             каталог магазина тем и его встроенные темы
+data/              схемы, значки, звуки, обои, темы
+tools/             генераторы, переводы, скрипты для разработки
+</code></pre>
+<h2 id="оболочка-без-сеанса">Оболочка без сеанса</h2>
+<p><code>tools/dev/shell-headless.sh start 1600x900</code> запускает вложенный GNOME Shell с HypeDE без экрана;
+<code>eval</code> выполняет в нём JavaScript, <code>shot ФАЙЛ</code> делает снимок.</p>
+<h2 id="переводы">Переводы</h2>
+<p>Исходный язык — английский. Русские строки лежат в <code>tools/i18n/settings_ru.py</code> («Настройки») и
+<code>tools/i18n/po_ru.py</code> (оболочка). <code>make pot</code> пересобирает <code>po/</code>.</p>
+<h2 id="тесты">Тесты</h2>
+<pre class="code"><code>python3 -m unittest discover -s apps/theme/tests -t apps/theme
+</code></pre>
+<h2 id="участие">Участие</h2>
+<p>Запросы на слияние и сообщения об ошибках — на <a href="https://github.com/hypede/hypede">GitHub</a>. Темы
+публикуются через <a href="themes.html#как-опубликовать-свою-тему">магазин тем</a>, а не через запросы на слияние.</p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/ru/developers.md">Исправить страницу</a></p>
+  </main>
+  <aside class="wiki-toc" aria-label="На этой странице">
+    <span>На этой странице</span>
+    <div class="toc">
+<ul>
+<li><a href="#сборка-из-исходников">Сборка из исходников</a></li>
+<li><a href="#устройство">Устройство</a></li>
+<li><a href="#оболочка-без-сеанса">Оболочка без сеанса</a></li>
+<li><a href="#переводы">Переводы</a></li>
+<li><a href="#тесты">Тесты</a></li>
+<li><a href="#участие">Участие</a></li>
+</ul>
+</div>
+
+  </aside>
+</div>
+</body>
+</html>
