@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Собрать вики: wiki-src/{en,ru}/*.md → wiki/*.html и wiki/ru/*.html.
+"""Собрать вики: wiki-src/{en,ru}/*.md → wiki/*.html и wiki/ru/*.html,
+и проставить версии CSS и JS на всех страницах сайта.
 
 Нужен пакет markdown (pip install markdown). Запуск из корня сайта:
     python3 tools/build-wiki.py
 """
 
+import hashlib
 import html
 import json
 import re
@@ -36,9 +38,9 @@ TEMPLATE = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="{assets}site.css">
-<link rel="stylesheet" href="{assets}wiki.css">
-<script type="module" src="{assets}wiki.js"></script>
+<link rel="stylesheet" href="{assets}site.css?v={v_site_css}">
+<link rel="stylesheet" href="{assets}wiki.css?v={v_wiki_css}">
+<script type="module" src="{assets}wiki.js?v={v_wiki_js}"></script>
 </head>
 <body class="wiki" data-index="{index_url}" data-nothing="{nothing}">
 <header class="wiki-top">
@@ -64,6 +66,24 @@ TEMPLATE = """<!doctype html>
 </body>
 </html>
 """
+
+
+# Версия файла по содержимому: без неё браузер может взять новую страницу и
+# старый CSS из кэша (GitHub Pages разрешает кэшировать на 10 минут).
+def version(name):
+    return hashlib.sha256((ROOT / "assets" / name).read_bytes()).hexdigest()[:10]
+
+
+VERSIONS = {f"v_{n.replace('.', '_')}": version(n) for n in ("site.css", "site.js", "wiki.css", "wiki.js")}
+
+
+def stamp_pages():
+    for page in (ROOT / "index.html", ROOT / "ru/index.html"):
+        text = page.read_text(encoding="utf-8")
+        for name in ("site.css", "site.js"):
+            text = re.sub(r'(assets/%s)(\?v=\w+)?"' % re.escape(name),
+                          lambda m, n=name: f'{m.group(1)}?v={VERSIONS["v_" + n.replace(".", "_")]}"', text)
+        page.write_text(text, encoding="utf-8")
 
 
 def read(path):
@@ -104,7 +124,7 @@ def build(lang, cfg):
             assets=assets, other=cfg["other"], other_lang="ru" if lang == "en" else "en",
             other_name=cfg["other_name"], page=name, site=cfg["site"], search=cfg["search"],
             nav=nav, body=body, toc=md.toc, contents=cfg["contents"], edit=cfg["edit"],
-            nothing=cfg["nothing"], index_url="search.json")
+            nothing=cfg["nothing"], index_url="search.json", **VERSIONS)
         (out / f"{name}.html").write_text(page_html, encoding="utf-8")
         for section in re.split(r"(?=<h2)", body):
             h = re.search(r'<h[12][^>]*id="([^"]*)"[^>]*>(.*?)</h[12]>', section)
@@ -119,3 +139,4 @@ def build(lang, cfg):
 
 for lang, cfg in LANGS.items():
     build(lang, cfg)
+stamp_pages()
