@@ -29,3 +29,16 @@ Speed is adjustable; Lite mode turns them off.
 - **Move**: drag a widget anywhere; it snaps to an 8-pixel grid. *Return to the column* puts it back
   on the right edge.
 - Widgets live under windows, like icons. Show the desktop with four fingers down to see them.
+
+## Dynamic Island
+
+The capsule on the shelf next to the launcher button is the Dynamic Island from
+[DynamicLinux](https://github.com/RBXLU/DynamicLinux). It shows what is going on right now —
+music, downloads, timers, screen recording — and opens into a bubble above the shelf with tabs:
+clipboard, file shelf, AI chat, tools (screenshot, recording, OCR, colour picker, voice input),
+text tools, notes, system, weather, timer and a pet.
+
+- Turn it on or off in *Personalization → Dynamic Island*; *Island settings* opens its own options.
+- With *Match the HypeDE theme* on, it takes colours, font and corners from your theme.
+- <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> opens it from the keyboard.
+- On a side shelf the capsule does not fit, so the island sits at the top of the screen.
