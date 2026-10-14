@@ -8,7 +8,7 @@ separate session: your regular GNOME stays as it was, and HypeDE keeps its own s
 
 ## Install
 
-Arch Linux, CachyOS and other Arch-based systems with GNOME Shell 48–50:
+Arch Linux, CachyOS and other Arch-based systems with GNOME Shell 48–51:
 
 ```
 git clone https://github.com/hypede/hypede

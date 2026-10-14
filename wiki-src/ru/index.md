@@ -8,7 +8,7 @@ HypeDE — рабочий стол в духе Chrome OS поверх нетро
 
 ## Установка
 
-Arch Linux, CachyOS и другие системы на базе Arch с GNOME Shell 48–50:
+Arch Linux, CachyOS и другие системы на базе Arch с GNOME Shell 48–51:
 
 ```
 git clone https://github.com/hypede/hypede
