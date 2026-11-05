@@ -11,7 +11,9 @@ The shelf holds GNOME's own indicators, so everything that shows up in GNOME's t
 - **Style**: across the whole edge or floating, with its own size, icon size, opacity and blur.
 - **Apps**: drag icons to reorder, right-click to pin or unpin. A dot shows running apps; clicking an
   app with several windows cycles through them.
-- **Auto-hide** hides the shelf under maximised windows.
+- **Auto-hide** hides the shelf when a window covers it. Touch the screen edge and it comes out; it stays
+  while the pointer is on it or near it and hides a moment after you move away. <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>
+  brings it out from the keyboard.
 
 ## The launcher
 

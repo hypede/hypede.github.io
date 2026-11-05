@@ -39,7 +39,7 @@
 <tbody>
 <tr>
 <td>Сеть, Bluetooth</td>
-<td>модули KDE (<code>plasma-nm</code>, <code>bluedevil</code>), прокси</td>
+<td>Wi‑Fi, Ethernet, VPN, устройства Bluetooth, прокси</td>
 </tr>
 <tr>
 <td>Устройство</td>
@@ -79,6 +79,16 @@
 </tr>
 </tbody>
 </table>
+<h2 id="vpn">VPN</h2>
+<p><em>Настройки → Сеть → Добавить VPN…</em>:</p>
+<ul>
+<li><strong>Импортировать файл…</strong> — файл от вашего VPN-провайдера: WireGuard <code>.conf</code>, OpenVPN <code>.ovpn</code>, Cisco
+  <code>.pcf</code> и другие. Для OpenVPN и Cisco нужен плагин NetworkManager (<code>networkmanager-openvpn</code>,
+  <code>networkmanager-vpnc</code>); WireGuard работает без плагинов.</li>
+<li><strong>Вставить настройки WireGuard…</strong> — вставьте текст с <code>[Interface]</code> и <code>[Peer]</code> и дайте название.</li>
+</ul>
+<p>VPN включается переключателем или в быстрых настройках. Щелчок по VPN — <strong>Подключаться автоматически</strong> и
+<strong>Удалить</strong>.</p>
 <h2 id="поиск">Поиск</h2>
 <p>Пишите в поле сверху: находятся и разделы, и отдельные настройки, по-русски и по-английски.</p>
 <h2 id="резервная-копия">Резервная копия</h2>
@@ -90,6 +100,7 @@
     <span>На этой странице</span>
     <div class="toc">
 <ul>
+<li><a href="#vpn">VPN</a></li>
 <li><a href="#поиск">Поиск</a></li>
 <li><a href="#резервная-копия">Резервная копия</a></li>
 </ul>

@@ -8,6 +8,15 @@ title: Desktop
 Files from your Desktop folder appear on the desktop, plus Home and Trash if you like. Drag them into
 apps and back, double-click to open, right-click for the menu. Settings: *Personalization → Desktop*.
 
+## Files
+
+- Each file type has its own coloured tile, like in Chrome OS: red PDF, green spreadsheets, orange
+  slides, teal code, purple music and so on, with the extension on it. Pictures and videos show a preview.
+- **Drag and drop**: drag files onto a folder, onto a place or bookmark in the sidebar (onto Trash to
+  delete), onto any folder in the path bar or onto a tab. Hold a file over a folder for a second and it
+  opens. On the same disk files move, to another disk they are copied; hold <kbd>Ctrl</kbd> to copy,
+  <kbd>Shift</kbd> to move. Dragging from empty space draws a selection rectangle.
+
 ## Live wallpapers
 
 *Personalization → Live wallpaper* has animated wallpapers (waves, bokeh, gradient) and **Video or

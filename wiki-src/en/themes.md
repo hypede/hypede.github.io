@@ -22,6 +22,17 @@ version; *Not reviewed yet* themes passed the automatic checks only.
 
 You can also paste any repository link into the field under the store and press **Install**.
 
+## The catalog at extensions.hypede.xyz
+
+The store also shows themes people published on [extensions.hypede.xyz](https://extensions.hypede.xyz/catalog/#/themes).
+To publish there: create an account (nickname, name, photo, a few words about you), choose **Publish**,
+upload the file from *Export current look* and a picture. Every upload is scanned by an antivirus and
+checked by a moderator before it appears; you see the status and the moderator's note in your account.
+GNOME Shell extensions are published the same way.
+
+Themes and extensions there are made by users. HypeDE is not responsible for your system: you install
+them at your own risk.
+
 ## Publishing your theme
 
 1. Set up the look you want and choose *Export current look*.
