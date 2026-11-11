@@ -75,14 +75,18 @@ def version(name):
 
 
 VERSIONS = {f"v_{n.replace('.', '_')}": version(n) for n in ("site.css", "site.js", "wiki.css", "wiki.js")}
+# Демо в браузере (try/): свои стили и скрипт.
+DEMO_ASSETS = ("try/demo.css", "try/demo.js")
 
 
 def stamp_pages():
-    for page in (ROOT / "index.html", ROOT / "ru/index.html"):
+    pages = {ROOT / "index.html": ("site.css", "site.js"), ROOT / "ru/index.html": ("site.css", "site.js"),
+             ROOT / "try/index.html": DEMO_ASSETS, ROOT / "ru/try/index.html": DEMO_ASSETS}
+    for page, names in pages.items():
         text = page.read_text(encoding="utf-8")
-        for name in ("site.css", "site.js"):
+        for name in names:
             text = re.sub(r'(assets/%s)(\?v=\w+)?"' % re.escape(name),
-                          lambda m, n=name: f'{m.group(1)}?v={VERSIONS["v_" + n.replace(".", "_")]}"', text)
+                          lambda m, n=name: f'{m.group(1)}?v={version(n)}"', text)
         page.write_text(text, encoding="utf-8")
 
 
