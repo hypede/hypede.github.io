@@ -21,10 +21,10 @@ ORDER = ["index", "launcher", "keys", "windows", "desktop", "modes", "themes", "
 LANGS = {
     "en": {"out": ROOT / "wiki", "site": "../", "other": "ru/", "other_name": "Русский",
            "search": "Search the wiki", "contents": "On this page", "wiki": "Wiki",
-           "edit": "Edit this page", "nothing": "Nothing found", "back": "HypeDE"},
+           "edit": "Edit this page", "ask": "Questions? Ask in", "nothing": "Nothing found", "back": "HypeDE"},
     "ru": {"out": ROOT / "wiki/ru", "site": "../../ru/", "other": "../", "other_name": "English",
            "search": "Поиск по вики", "contents": "На этой странице", "wiki": "Вики",
-           "edit": "Исправить страницу", "nothing": "Ничего не найдено", "back": "HypeDE"},
+           "edit": "Исправить страницу", "ask": "Вопросы? Спросите в", "nothing": "Ничего не найдено", "back": "HypeDE"},
 }
 TEMPLATE = """<!doctype html>
 <html lang="{lang}">
@@ -56,7 +56,7 @@ TEMPLATE = """<!doctype html>
   </nav>
   <main class="wiki-page">
 {body}
-    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/{lang}/{page}.md">{edit}</a></p>
+    <p class="wiki-edit"><a href="https://github.com/hypede/hypede.github.io/edit/main/wiki-src/{lang}/{page}.md">{edit}</a> · {ask} <a href="https://t.me/hypede_dev">Telegram</a> / <a href="https://discord.gg/6NPVcJZvu">Discord</a></p>
   </main>
   <aside class="wiki-toc" aria-label="{contents}">
     <span>{contents}</span>
@@ -127,7 +127,7 @@ def build(lang, cfg):
             lang=lang, title=html.escape(meta["title"]), wiki=cfg["wiki"], description=html.escape(first[:160]),
             assets=assets, other=cfg["other"], other_lang="ru" if lang == "en" else "en",
             other_name=cfg["other_name"], page=name, site=cfg["site"], search=cfg["search"],
-            nav=nav, body=body, toc=md.toc, contents=cfg["contents"], edit=cfg["edit"],
+            nav=nav, body=body, toc=md.toc, contents=cfg["contents"], edit=cfg["edit"], ask=cfg["ask"],
             nothing=cfg["nothing"], index_url="search.json", **VERSIONS)
         (out / f"{name}.html").write_text(page_html, encoding="utf-8")
         for section in re.split(r"(?=<h2)", body):
