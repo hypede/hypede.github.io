@@ -50,6 +50,52 @@
     </figure>
   </header>
 
+  <section id="alpha" data-launcher="Alpha look">
+    <div class="section-head">
+      <span class="eyebrow">Alpha look · 8.0.0ALPHA</span>
+      <h2>The first alpha, measured against ChromeOS.</h2>
+      <p>For HypeDE 8.0.0ALPHA we went through ChromeOS 15x part by part and took sizes, spacing and animation timings straight from the Chromium source: the shelf, the launcher, windows, quick settings, the tray and the lock screen.</p>
+    </div>
+    <ul class="chips">
+      <li>Shelf 48 px</li>
+      <li>Recent apps</li>
+      <li>Windows in 200 ms</li>
+      <li>Window layout menu</li>
+      <li>Alt+Tab by window</li>
+      <li>Quick settings tiles</li>
+      <li>Lock screen</li>
+      <li>Picture and name</li>
+      <li>Light · Dark · Auto</li>
+    </ul>
+    <div class="gallery" style="margin-top: 28px">
+      <figure class="screen">
+        <img src="assets/img/alpha-lock.webp?v=5ba0103989" width="1280" height="720" loading="lazy"
+             alt="Lock screen: your picture and name over the blurred wallpaper, with a password field and a submit button below them">
+        <figcaption>Lock screen like ChromeOS: picture, name and the password field at once. Time and power stay on the shelf.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="assets/img/alpha-launcher.webp?v=caaa21917b" width="1280" height="720" loading="lazy"
+             alt="Launcher open above the shelf: search, files to continue with, a row of recent apps and the app grid">
+        <figcaption>Launcher: recent apps above the grid, files to continue with. Opens in 150 ms.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="assets/img/alpha-quick-settings.webp?v=9cbebeb441" width="1280" height="720" loading="lazy"
+             alt="Quick settings with Do Not Disturb on: tiles on top, the power button and Settings in the bottom row">
+        <figcaption>Quick settings: tiles first, power and Settings at the bottom. Tiles that are on use the accent.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="assets/img/alpha-snap.webp?v=31f49a8d7c" width="1280" height="720" loading="lazy"
+             alt="Files window with the Window layout menu under its maximise button: two split layouts, Full screen and Float">
+        <figcaption>Hold the pointer on maximise: half, two thirds, full screen or float.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="assets/img/alpha-avatar.webp?v=fc449a01ed" width="1280" height="720" loading="lazy"
+             alt="Settings, Personalization: picture and name at the top, with a grid of 20 pictures to choose from">
+        <figcaption>Settings: Personalization starts with your picture and name, as on a Chromebook.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="parts" data-launcher="What's inside">
     <div class="section-head">
       <span class="eyebrow">What's inside</span>
@@ -369,6 +415,7 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Copied"
 <nav class="shelf" aria-label="Site">
   <button class="ring" type="button" aria-label="Launcher" aria-expanded="false" aria-controls="launcher"></button>
   <div class="shelf-apps">
+    <a href="#alpha" aria-label="Alpha look"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2l2.2 6.3L20.5 10.5l-6.3 2.2L12 19l-2.2-6.3L3.5 10.5l6.3-2.2zM19 15l1 2.6 2.6 1-2.6 1L19 22l-1-2.4-2.6-1 2.6-1z"/></svg><span>Alpha</span></a>
     <a href="#parts" aria-label="What's inside"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Inside</span></a>
     <a href="#everyday" aria-label="Everyday"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span>Everyday</span></a>
     <a href="#themes" aria-label="Themes"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0 0 18c.8 0 1.5-.7 1.5-1.5 0-.4-.2-.7-.4-1-.2-.3-.4-.6-.4-1 0-.8.7-1.5 1.5-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8zm-5.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg><span>Themes</span></a>

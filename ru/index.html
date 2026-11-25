@@ -50,6 +50,52 @@
     </figure>
   </header>
 
+  <section id="alpha" data-launcher="Alpha look: вид альфы">
+    <div class="section-head">
+      <span class="eyebrow">Alpha look · 8.0.0ALPHA</span>
+      <h2>Первая альфа, сверенная с ChromeOS.</h2>
+      <p>Для HypeDE 8.0.0ALPHA мы прошли ChromeOS 15x часть за частью и взяли размеры, отступы и скорость анимаций прямо из исходников Chromium: полка, лаунчер, окна, быстрые настройки, трей и экран блокировки.</p>
+    </div>
+    <ul class="chips">
+      <li>Полка 48 px</li>
+      <li>Недавние программы</li>
+      <li>Окна за 200 мс</li>
+      <li>Меню раскладки</li>
+      <li>Alt+Tab по окнам</li>
+      <li>Плитки быстрых настроек</li>
+      <li>Экран блокировки</li>
+      <li>Фото и имя</li>
+      <li>Светлая · Тёмная · Авто</li>
+    </ul>
+    <div class="gallery" style="margin-top: 28px">
+      <figure class="screen">
+        <img src="../assets/img/alpha-lock.webp?v=5ba0103989" width="1280" height="720" loading="lazy"
+             alt="Экран блокировки: фото и имя на размытых обоях, ниже поле пароля и кнопка входа">
+        <figcaption>Экран блокировки как в ChromeOS: фото, имя и сразу поле пароля. Время и выключение — на полке.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="../assets/img/alpha-launcher.webp?v=caaa21917b" width="1280" height="720" loading="lazy"
+             alt="Лаунчер над полкой: поиск, файлы, с которыми вы работали, ряд недавних программ и сетка программ">
+        <figcaption>Лаунчер: недавние программы над сеткой и файлы, с которыми вы работали. Открывается за 150 мс.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="../assets/img/alpha-quick-settings.webp?v=9cbebeb441" width="1280" height="720" loading="lazy"
+             alt="Быстрые настройки с включённым «Не беспокоить»: плитки сверху, внизу кнопка питания и «Настройки»">
+        <figcaption>Быстрые настройки: сначала плитки, внизу питание и «Настройки». Включённые плитки — цвета акцента.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="../assets/img/alpha-snap.webp?v=31f49a8d7c" width="1280" height="720" loading="lazy"
+             alt="Окно «Файлов» с меню раскладки под кнопкой «развернуть»: две раскладки, «Весь экран» и «Плавающее»">
+        <figcaption>Задержите указатель на «развернуть»: половина, две трети, весь экран или плавающее окно.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="../assets/img/alpha-avatar-ru.webp?v=393710d357" width="1280" height="720" loading="lazy"
+             alt="«Настройки», «Персонализация»: фото и имя вверху и сетка из 20 картинок на выбор">
+        <figcaption>«Настройки»: «Персонализация» начинается с фото и имени, как на Chromebook.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section id="parts" data-launcher="Что внутри">
     <div class="section-head">
       <span class="eyebrow">Что внутри</span>
@@ -370,6 +416,7 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Ско�
 <nav class="shelf" aria-label="Сайт">
   <button class="ring" type="button" aria-label="Лаунчер" aria-expanded="false" aria-controls="launcher"></button>
   <div class="shelf-apps">
+    <a href="#alpha" aria-label="Вид альфы"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 2l2.2 6.3L20.5 10.5l-6.3 2.2L12 19l-2.2-6.3L3.5 10.5l6.3-2.2zM19 15l1 2.6 2.6 1-2.6 1L19 22l-1-2.4-2.6-1 2.6-1z"/></svg><span>Альфа</span></a>
     <a href="#parts" aria-label="Что внутри"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg><span>Внутри</span></a>
     <a href="#everyday" aria-label="На каждый день"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span>Каждый день</span></a>
     <a href="#themes" aria-label="Темы"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0 0 18c.8 0 1.5-.7 1.5-1.5 0-.4-.2-.7-.4-1-.2-.3-.4-.6-.4-1 0-.8.7-1.5 1.5-1.5H16a5 5 0 0 0 5-5c0-4.4-4-8-9-8zm-5.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg><span>Темы</span></a>
