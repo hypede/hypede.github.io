@@ -87,6 +87,10 @@ def stamp_pages():
         for name in names:
             text = re.sub(r'(assets/%s)(\?v=\w+)?"' % re.escape(name),
                           lambda m, n=name: f'{m.group(1)}?v={version(n)}"', text)
+        # Снимки экрана тоже: их переснимают под тем же именем, и без версии
+        # браузер долго показывает старый снимок.
+        text = re.sub(r'(assets/(img/[\w.-]+\.(?:webp|png|jpg|svg)))(\?v=\w+)?"',
+                      lambda m: f'{m.group(1)}?v={version(m.group(2))}"', text)
         page.write_text(text, encoding="utf-8")
 
 
