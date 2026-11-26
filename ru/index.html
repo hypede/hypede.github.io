@@ -13,8 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=2174a1c801">
-<script type="module" src="../assets/site.js?v=3f7e590ee3"></script>
+<link rel="stylesheet" href="../assets/site.css?v=7eedc132d4">
+<script type="module" src="../assets/site.js?v=e0a0a398a8"></script>
 </head>
 <body>
 <main class="page">
@@ -37,6 +37,7 @@
       <button type="button" data-copy="cmd-hero" data-done="Скопировано" data-select="Выделено — нажмите Ctrl+C">Копировать</button>
     </div>
     <div class="actions">
+      <a class="button alpha" href="https://github.com/hypede/alpha-hypede" data-alpha><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z"/></svg><span>Скачать Alpha</span></a>
       <a class="button" href="try/">Попробовать в браузере</a>
       <a class="button quiet" href="https://github.com/hypede/hypede">Исходники на GitHub</a>
       <a class="button quiet" href="#install">Как установить</a>
@@ -412,6 +413,25 @@ makepkg -si</code><button type="button" data-copy="cmd-build" data-done="Ско�
     <span>Проект не связан с Google. Все изображения — свои.</span>
   </footer>
 </main>
+
+<dialog id="alpha-dialog" class="alpha-dialog" aria-labelledby="alpha-title">
+  <form method="dialog">
+    <h2 id="alpha-title"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12 2 1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2V9h2v4z"/></svg><span>HypeDE 8.0.0ALPHA нестабильна</span></h2>
+    <p>Это первая альфа. Будут ошибки и недоделанные места: обновление может сломать сеанс или сбросить настройки.</p>
+    <ul>
+      <li>Пробуйте в виртуальной машине или на запасном компьютере, а не на том, на котором работаете.</li>
+      <li>Перед установкой сохраните всё важное.</li>
+      <li>Расскажите, что сломалось: <a href="https://github.com/hypede/alpha-hypede/issues">issues</a>, <a href="https://t.me/hypede_dev">Telegram</a> или <a href="https://discord.gg/6NPVcJZvu">Discord</a>.</li>
+    </ul>
+    <label class="alpha-ack"><input type="checkbox" id="alpha-ack"> Я понимаю, что альфа нестабильна</label>
+    <div class="actions">
+      <a class="button" href="https://github.com/hypede/alpha-hypede/releases/tag/iso-latest" data-alpha-link aria-disabled="true" tabindex="-1">ISO для ПК и виртуальных машин</a>
+      <a class="button quiet" href="https://github.com/hypede/alpha-hypede#установка-альфы-arch-cachyos" data-alpha-link aria-disabled="true" tabindex="-1">Установка на Arch</a>
+      <button class="button quiet" value="cancel">Отмена</button>
+    </div>
+    <p class="alpha-note">Стабильная версия — в разделе установки ниже.</p>
+  </form>
+</dialog>
 
 <nav class="shelf" aria-label="Сайт">
   <button class="ring" type="button" aria-label="Лаунчер" aria-expanded="false" aria-controls="launcher"></button>

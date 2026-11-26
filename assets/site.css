@@ -10,6 +10,8 @@
   --accent: #0b57d0;       /* Chrome OS–style tonal blue */
   --accent-soft: #d3e3fd;  /* selected pills, code chips */
   --on-accent-soft: #041e49;
+  --warn: #ffdf99;          /* alpha: amber container */
+  --on-warn: #3f2e00;
   --shelf: rgba(242, 245, 250, 0.86);
   --shadow: 0 1px 2px rgba(22, 32, 46, 0.06), 0 8px 28px rgba(22, 32, 46, 0.10);
 
@@ -28,6 +30,7 @@
   :root:not([data-theme="light"]) {
     --sky: #0f1726; --surface: #1b2436; --ink: #e6ecf6; --muted: #a3b0c7;
     --line: #2c3850; --accent: #a8c7fa; --accent-soft: #0b3a82; --on-accent-soft: #d3e3fd;
+    --warn: #5a4300; --on-warn: #ffdf99;
     --shelf: rgba(18, 24, 36, 0.84);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35);
     color-scheme: dark;
@@ -36,6 +39,7 @@
 :root[data-theme="dark"] {
   --sky: #0f1726; --surface: #1b2436; --ink: #e6ecf6; --muted: #a3b0c7;
   --line: #2c3850; --accent: #a8c7fa; --accent-soft: #0b3a82; --on-accent-soft: #d3e3fd;
+  --warn: #5a4300; --on-warn: #ffdf99;
   --shelf: rgba(18, 24, 36, 0.84);
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(0, 0, 0, 0.35);
   color-scheme: dark;
@@ -113,6 +117,23 @@ button, .button {
 .button.social { display: inline-flex; align-items: center; gap: 8px; }
 .button.social svg { flex: none; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.button.alpha { display: inline-flex; align-items: center; gap: 8px; background: var(--warn); color: var(--on-warn); }
+.button.alpha svg { flex: none; }
+
+/* Окно «Скачать Alpha»: предупреждение, ссылки — после галочки. */
+.alpha-dialog {
+  width: min(520px, calc(100vw - 32px)); padding: 28px; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--surface); color: var(--ink); box-shadow: var(--shadow);
+}
+.alpha-dialog::backdrop { background: rgba(10, 16, 28, 0.45); }
+.alpha-dialog h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font: 700 var(--step-1) var(--font-display); }
+.alpha-dialog h2 svg { flex: none; color: var(--on-warn); background: var(--warn); border-radius: 999px; padding: 6px; width: 32px; height: 32px; }
+.alpha-dialog ul { margin: 12px 0 18px; padding-left: 20px; line-height: 1.6; }
+.alpha-dialog a:not(.button) { color: var(--accent); }
+.alpha-ack { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-weight: 600; cursor: pointer; }
+.alpha-ack input { width: 18px; height: 18px; accent-color: var(--accent); }
+.alpha-dialog [aria-disabled="true"] { opacity: 0.45; pointer-events: none; }
+.alpha-note { margin: 16px 0 0; color: var(--muted); font-size: 0.9rem; }
 
 .screen {
   width: 100%;

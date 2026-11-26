@@ -76,6 +76,29 @@ if (ring && bubble) {
     });
 }
 
+// ---- «Скачать Alpha»: сначала предупреждение ----
+// Без JS кнопка просто ведёт в репозиторий альфы, где то же предупреждение.
+const alphaDialog = document.getElementById('alpha-dialog');
+if (alphaDialog?.showModal) {
+    const ack = document.getElementById('alpha-ack');
+    const links = alphaDialog.querySelectorAll('[data-alpha-link]');
+    const sync = () => {
+        for (const link of links) {
+            link.setAttribute('aria-disabled', String(!ack.checked));
+            link.tabIndex = ack.checked ? 0 : -1;
+        }
+    };
+    ack.addEventListener('change', sync);
+    for (const button of document.querySelectorAll('[data-alpha]')) {
+        button.addEventListener('click', e => {
+            e.preventDefault();
+            ack.checked = false;
+            sync();
+            alphaDialog.showModal();
+        });
+    }
+}
+
 // ---- copy buttons ----
 for (const button of document.querySelectorAll('[data-copy]')) {
     const label = button.textContent;
