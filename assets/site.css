@@ -69,7 +69,7 @@ code, pre { font-family: var(--font-mono); font-size: 0.88em; }
 
 .page { max-width: 1080px; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 96px; }
 
-/* ---------- hero ---------- */
+/* Hero */
 .hero {
   position: relative;
   padding-block: 72px 0;
@@ -147,7 +147,7 @@ button, .button {
 figure { margin: 0; display: grid; gap: 10px; }
 figcaption { color: var(--muted); font-size: 0.92rem; }
 
-/* ---------- parts ---------- */
+/* Parts */
 .section-head { display: grid; gap: 12px; max-width: 64ch; margin-bottom: 32px; }
 .eyebrow { font: 600 0.8rem var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
 .part {
@@ -163,7 +163,7 @@ figcaption { color: var(--muted); font-size: 0.92rem; }
 .part-text li strong { color: var(--ink); font-weight: 600; }
 .stack { font: 500 0.85rem var(--font-mono); color: var(--muted); }
 
-/* ---------- how ---------- */
+/* How */
 .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 .how article { background: var(--surface); border-radius: var(--radius); padding: 24px; display: grid; gap: 10px; align-content: start; border: 1px solid var(--line); }
 .how p { color: var(--muted); }
@@ -172,7 +172,7 @@ pre.tree {
   background: var(--surface); border: 1px solid var(--line); line-height: 1.7;
 }
 
-/* ---------- install ---------- */
+/* Install */
 .steps { display: grid; gap: 18px; counter-reset: step; }
 .step { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; }
 .step::before {
@@ -192,7 +192,7 @@ pre.tree {
 
 footer { color: var(--muted); font-size: 0.92rem; display: flex; gap: 12px 24px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 24px; }
 
-/* ---------- the shelf (site navigation) ---------- */
+/* The shelf (site navigation) */
 .shelf {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
   height: calc(var(--shelf-height) + env(safe-area-inset-bottom, 0px));
@@ -250,7 +250,7 @@ footer { color: var(--muted); font-size: 0.92rem; display: flex; gap: 12px 24px;
   .tray .date { display: none; }
   .install { border-radius: 20px; padding: 14px 16px; }
 }
-/* ---------- motion ----------
+/* Motion.
    Everything below is decoration: the page is complete without it, and
    prefers-reduced-motion switches it off. Scroll reveals only apply once
    site.js has marked the page with .motion, and never to what is already
@@ -322,7 +322,7 @@ footer { color: var(--muted); font-size: 0.92rem; display: flex; gap: 12px 24px;
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-/* ---------- lock screen and customisation sections ---------- */
+/* Lock screen and customisation sections */
 .wave-band {
   position: relative; height: 90px; overflow: hidden; border-radius: var(--radius);
   background: var(--surface); border: 1px solid var(--line);

@@ -19,7 +19,7 @@ const INSTALL_URL = new URL(lang === 'ru' ? 'ru/#install' : '#install', SITE).hr
 const HOME_URL = new URL(lang === 'ru' ? 'ru/' : './', SITE).href;
 const GITHUB_URL = 'https://github.com/hypede/hypede';
 
-// ---------------------------------------------------------------- строки
+// Строки
 
 const STRINGS = {
     en: {
@@ -143,7 +143,7 @@ const STRINGS = {
 const S = STRINGS[lang];
 const t = (key, ...args) => args.reduce((s, a) => s.replace('%s', a), S[key] ?? key);
 
-// ---------------------------------------------------------------- мелочи
+// Мелочи
 
 const store = {
     get(key, fallback) {
@@ -206,7 +206,7 @@ function fmtSize(bytes) {
     return `${v.toLocaleString(lang, {maximumFractionDigits: 1})} ${units[i]}`;
 }
 
-// ---------------------------------------------------------------- оформление
+// Оформление
 
 const ACCENTS = [
     {name: 'blue', light: '#0b57d0', dark: '#a8c7fa', softL: '#d3e3fd', softD: '#0b3a82', fgD: '#062e6f'},
@@ -232,7 +232,7 @@ const state = {
     brightness: 100,
 };
 
-// ---------------------------------------------------------------- каркас
+// Каркас
 
 const root = document.getElementById('hypede-demo');
 root.classList.add('hd');
@@ -294,7 +294,7 @@ function setLook(key, value) {
 const saverStyle = h('style', {}, '.hd.saver *, .hd.saver { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }');
 document.head.append(saverStyle);
 
-// ---------------------------------------------------------------- всплывающее «полная версия»
+// Всплывающее «полная версия»
 
 function dialog({iconName = 'dialog-information', title, text, actions}) {
     const scrim = h('div', {class: 'scrim'});
@@ -333,7 +333,7 @@ function full(feature) {
     });
 }
 
-// ---------------------------------------------------------------- уведомления
+// Уведомления
 
 function notify({app, iconName, title, body, actions = [], force = false}) {
     if (state.dnd && !force)
@@ -353,7 +353,7 @@ function notify({app, iconName, title, body, actions = [], force = false}) {
     toast.addEventListener('pointerleave', () => (timer = setTimeout(() => toast.remove(), 4000)));
 }
 
-// ---------------------------------------------------------------- окна
+// Окна
 
 const wm = {windows: [], z: 100, seq: 0};
 let bar = null; // плашка демо сверху
@@ -586,7 +586,7 @@ addEventListener('resize', () => {
     }
 });
 
-// ---------------------------------------------------------------- программы
+// Программы
 
 const APPS = {
     Files: {name: S.files, open: () => openFiles()},
@@ -618,7 +618,7 @@ function launch(app, ...args) {
     return APPS[app].open(...args);
 }
 
-// ---------- полка ----------
+// Полка
 
 function renderShelf() {
     const running = wm.windows.map(w => w.app);
@@ -660,7 +660,7 @@ function tip(el, text) {
     el.addEventListener('pointerdown', () => tooltip.classList.remove('on'));
 }
 
-// ---------- часы ----------
+// Часы
 
 function tick() {
     const now = new Date();
@@ -677,7 +677,7 @@ widgets.append(h('div', {class: 'widget'}, clockWidget.big, clockWidget.small),
         h('div', {class: 'big', style: {fontSize: '30px'}}, '☀ 12°'),
         h('div', {class: 'small'}, `${S.city} · ${S.partly}`)));
 
-// ---------------------------------------------------------------- пузыри
+// Пузыри
 
 const popups = new Set();
 function bubble(cls, button) {
@@ -726,7 +726,7 @@ root.addEventListener('pointerdown', e => {
     closePopups();
 });
 
-// ---------- лаунчер ----------
+// Лаунчер
 
 const launcher = bubble('launcher', ring);
 const searchInput = h('input', {type: 'search', placeholder: S.search, 'aria-label': S.search, autocomplete: 'off'});
@@ -845,7 +845,7 @@ searchInput.addEventListener('keydown', e => {
     }
 });
 
-// ---------- быстрые настройки ----------
+// Быстрые настройки
 
 const qs = bubble('qs right', statusPill);
 qs.render = () => {
@@ -892,7 +892,7 @@ function powerDialog() {
     ]});
 }
 
-// ---------- календарь ----------
+// Календарь
 
 const calendar = bubble('calendar right', datePill);
 let calMonth = new Date();
@@ -923,7 +923,7 @@ calendar.render = () => {
         h('div', {class: 'cal-grid'}, dows.map(d => h('div', {class: 'dow'}, d)), days));
 };
 
-// ---------- динамический остров ----------
+// Динамический остров
 
 const islandPanel = bubble('island-panel', island);
 const TRACKS = lang === 'ru'
@@ -1014,7 +1014,7 @@ function toggleTimer() {
     syncIsland();
 }
 
-// ---------------------------------------------------------------- файловая система
+// Файловая система
 
 const ru = lang === 'ru';
 const N = {
@@ -1130,7 +1130,7 @@ function openFile(path) {
     full(t('openWith', node.name));
 }
 
-// ---------- «Файлы» ----------
+// «Файлы»
 
 function openFiles(start = '') {
     const view = {path: start, mode: 'grid', back: [], forward: []};
@@ -1239,7 +1239,7 @@ function openFiles(start = '') {
     return win;
 }
 
-// ---------- «Терминал» ----------
+// «Терминал»
 
 function openTerminal() {
     const out = h('div', {class: 'term-out'});
@@ -1405,7 +1405,7 @@ function openTerminal() {
     return win;
 }
 
-// ---------- «Настройки» ----------
+// «Настройки»
 
 const SETTINGS_PAGES = {
     network: {title: S.network, subtitle: S.networkS, icon: 'network-wireless'},
@@ -1546,7 +1546,7 @@ function openSettings(pageId = 'personal') {
     return win;
 }
 
-// ---------- «Погода» ----------
+// «Погода»
 
 function openWeather() {
     const hours = [...Array(6)].map((_, i) => {
@@ -1570,7 +1570,7 @@ function openWeather() {
             h('p', {class: 's', style: {color: 'var(--dim)', fontSize: '12.5px'}}, S.demoData))});
 }
 
-// ---------- «Диспетчер задач» ----------
+// «Диспетчер задач»
 
 function openTasks() {
     const rows = new Map();
@@ -1629,7 +1629,7 @@ function openTasks() {
     return win;
 }
 
-// ---------- «ИИ-помощник» ----------
+// «ИИ-помощник»
 
 function openAssistant() {
     return new Win('Assistant', {title: S.assistant, width: 460, height: 520,
@@ -1640,7 +1640,7 @@ function openAssistant() {
             h('a', {class: 'btn', href: INSTALL_URL, target: '_top'}, S.install)))});
 }
 
-// ---------------------------------------------------------------- экран блокировки
+// Экран блокировки
 
 let lockScreen = null;
 function lock() {
@@ -1687,7 +1687,7 @@ function lock() {
     el.focus();
 }
 
-// ---------------------------------------------------------------- рабочий стол и клавиши
+// Рабочий стол и клавиши
 
 desktopIcons.append(
     h('button', {class: 'desktop-icon', ondblclick: () => launch('Files'), onclick: e => e.detail === 0 && launch('Files')},

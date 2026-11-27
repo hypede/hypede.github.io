@@ -4,7 +4,7 @@ import {evaluate, looksLikeMath} from './calculator.js';
 
 const lang = document.documentElement.lang.startsWith('ru') ? 'ru' : 'en';
 
-// ---- clock and date in the tray ----
+// Clock and date in the tray
 const clock = document.querySelector('.tray .time');
 const date = document.querySelector('.tray .date');
 function tick() {
@@ -15,7 +15,7 @@ function tick() {
 tick();
 setInterval(tick, 15000);
 
-// ---- launcher bubble ----
+// Launcher bubble
 const ring = document.querySelector('.ring');
 const bubble = document.getElementById('launcher');
 const input = document.getElementById('launcher-search');
@@ -76,7 +76,7 @@ if (ring && bubble) {
     });
 }
 
-// ---- «Скачать Alpha»: сначала предупреждение ----
+// «Скачать Alpha»: сначала предупреждение
 // Без JS кнопка просто ведёт в репозиторий альфы, где то же предупреждение.
 const alphaDialog = document.getElementById('alpha-dialog');
 if (alphaDialog?.showModal) {
@@ -99,7 +99,7 @@ if (alphaDialog?.showModal) {
     }
 }
 
-// ---- copy buttons ----
+// Copy buttons
 for (const button of document.querySelectorAll('[data-copy]')) {
     const label = button.textContent;
     button.addEventListener('click', async () => {
@@ -118,7 +118,7 @@ for (const button of document.querySelectorAll('[data-copy]')) {
     });
 }
 
-// ---- scroll reveal ----
+// Scroll reveal
 // Only for what is below the fold at load: the first screen is already
 // animated by CSS and must never start out invisible.
 const motionOk = !matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -140,7 +140,7 @@ if (motionOk && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('motion');
 }
 
-// ---- current section on the shelf ----
+// Current section on the shelf
 const links = new Map([...document.querySelectorAll('.shelf-apps a[href^="#"]')]
     .map(a => [a.getAttribute('href').slice(1), a]));
 if ('IntersectionObserver' in window) {

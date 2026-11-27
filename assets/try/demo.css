@@ -61,7 +61,7 @@
 .hd .app-icon { width: 40px; height: 40px; flex: none; }
 .hd .selectable { user-select: text; -webkit-user-select: text; }
 
-/* ---------- обои, рабочий стол, ночной свет ---------- */
+/* Обои, рабочий стол, ночной свет */
 .hd .wallpaper {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
@@ -96,7 +96,7 @@
 .hd .widget .big { font-size: 40px; font-weight: 300; letter-spacing: 1px; line-height: 1.1; }
 .hd .widget .small { opacity: 0.85; font-size: 13px; }
 
-/* ---------- полка ---------- */
+/* Полка */
 .hd .shelf {
   position: absolute; left: 0; right: 0; bottom: 0; height: var(--shelf-h); z-index: 5000;
   display: flex; align-items: center; gap: 8px; padding: 0 10px;
@@ -156,7 +156,7 @@
 }
 .hd .tooltip.on { opacity: 1; }
 
-/* ---------- пузыри: лаунчер, быстрые настройки, календарь, остров ---------- */
+/* Пузыри: лаунчер, быстрые настройки, календарь, остров */
 .hd .bubble {
   position: absolute; z-index: 7100;
   background: var(--bubble); border: 1px solid var(--bubble-border); border-radius: 24px;
@@ -257,7 +257,7 @@
   padding: 10px 12px; background: var(--tile); color: var(--fg); font: inherit; outline: 0;
 }
 
-/* ---------- окна ---------- */
+/* Окна */
 .hd .window {
   position: absolute; display: flex; flex-direction: column; min-width: 320px; min-height: 220px;
   background: var(--surface); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow);
@@ -289,7 +289,7 @@
 }
 .hd .snap-preview.on { opacity: 1; }
 
-/* ---------- программы ---------- */
+/* Программы */
 .hd .sidebar { width: 224px; flex: none; background: var(--sidebar); padding: 8px; overflow: auto; }
 .hd .side-item {
   display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 12px; border-radius: 20px;
@@ -385,7 +385,7 @@
 .hd .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .hd .text-view { flex: 1; padding: 16px 20px; overflow: auto; font: 13.5px/1.6 var(--mono); white-space: pre-wrap; }
 
-/* ---------- уведомления, окно «полная версия», экран блокировки ---------- */
+/* Уведомления, окно «полная версия», экран блокировки */
 .hd .toasts { position: absolute; right: 12px; bottom: calc(var(--shelf-h) + 12px); z-index: 7000;
   display: grid; gap: 10px; width: 360px; max-width: calc(100vw - 24px); }
 .hd .toast {
