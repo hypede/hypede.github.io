@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<!-- HypeOS emoji «blush». SPDX-License-Identifier: GPL-3.0-or-later -->
+<defs><linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#ffc233"/></linearGradient></defs>
+<ellipse cx="64" cy="118" rx="38" ry="5" fill="#000" opacity="0.12"/><circle cx="64" cy="62" r="56" fill="url(#f)"/><ellipse cx="46" cy="30" rx="18" ry="9" fill="#fff" opacity="0.35" transform="rotate(-25 46 30)"/><path d="M34 56 Q44 46 54 56" fill="none" stroke="#3b2a1a" stroke-width="6" stroke-linecap="round"/><path d="M74 56 Q84 46 94 56" fill="none" stroke="#3b2a1a" stroke-width="6" stroke-linecap="round"/><ellipse cx="34" cy="72" rx="10" ry="6" fill="#ff7a8a" opacity="0.55"/><ellipse cx="94" cy="72" rx="10" ry="6" fill="#ff7a8a" opacity="0.55"/><path d="M40 78 Q64 100 88 78" fill="none" stroke="#3b2a1a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

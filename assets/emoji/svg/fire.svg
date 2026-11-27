@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<!-- HypeOS emoji «fire». SPDX-License-Identifier: GPL-3.0-or-later -->
+<defs><linearGradient id="fire" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd34e"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient></defs>
+<ellipse cx="64" cy="118" rx="36" ry="5" fill="#000" opacity="0.12"/><path d="M64 8 C80 30 100 44 98 76 C96 102 80 114 64 114 C46 114 30 102 30 78 C30 58 42 48 46 34 C52 46 56 50 60 52 C60 36 58 22 64 8 Z" fill="url(#fire)"/><path d="M64 62 C74 74 82 82 80 96 C78 106 72 112 64 112 C56 112 48 106 48 96 C48 84 58 76 64 62 Z" fill="#fff3b0"/>
+</svg>

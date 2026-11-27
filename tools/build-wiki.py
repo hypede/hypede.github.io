@@ -81,7 +81,8 @@ DEMO_ASSETS = ("try/demo.css", "try/demo.js")
 
 def stamp_pages():
     pages = {ROOT / "index.html": ("site.css", "site.js"), ROOT / "ru/index.html": ("site.css", "site.js"),
-             ROOT / "try/index.html": DEMO_ASSETS, ROOT / "ru/try/index.html": DEMO_ASSETS}
+             ROOT / "try/index.html": DEMO_ASSETS, ROOT / "ru/try/index.html": DEMO_ASSETS,
+             ROOT / "emoji/index.html": ("site.css",), ROOT / "ru/emoji/index.html": ("site.css",)}
     for page, names in pages.items():
         text = page.read_text(encoding="utf-8")
         for name in names:

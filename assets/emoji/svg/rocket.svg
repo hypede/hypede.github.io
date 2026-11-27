@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<!-- HypeOS emoji «rocket». SPDX-License-Identifier: GPL-3.0-or-later -->
+<defs><linearGradient id="rk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d7def0"/></linearGradient></defs>
+<ellipse cx="64" cy="118" rx="36" ry="5" fill="#000" opacity="0.12"/><path d="M64 6 C86 22 92 50 86 82 H42 C36 50 42 22 64 6 Z" fill="url(#rk)"/><circle cx="64" cy="44" r="12" fill="#4aa3ff" stroke="#1e3a8a" stroke-width="4"/><path d="M42 62 L24 86 L42 86 Z M86 62 L104 86 L86 86 Z" fill="#ef4444"/><path d="M50 84 Q64 120 78 84 Z" fill="#ff8a1f"/><path d="M56 84 Q64 104 72 84 Z" fill="#ffd34e"/>
+</svg>

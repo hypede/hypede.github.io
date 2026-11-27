@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<!-- HypeOS emoji «bug». SPDX-License-Identifier: GPL-3.0-or-later -->
+<ellipse cx="64" cy="118" rx="36" ry="5" fill="#000" opacity="0.12"/><ellipse cx="64" cy="72" rx="34" ry="40" fill="#ef4444"/><circle cx="64" cy="34" r="16" fill="#1f2937"/><path d="M64 34 V112" fill="none" stroke="#1f2937" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="62" r="7" fill="#1f2937"/><circle cx="80" cy="62" r="7" fill="#1f2937"/><circle cx="50" cy="90" r="6" fill="#1f2937"/><circle cx="78" cy="90" r="6" fill="#1f2937"/><path d="M30 60 L14 52 M30 80 L12 82 M98 60 L114 52 M98 80 L116 82 M56 22 L48 8 M72 22 L80 8" fill="none" stroke="#1f2937" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
